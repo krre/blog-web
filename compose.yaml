@@ -3,6 +3,7 @@ services:
     build:
       context: .
     image: krre/blog-web:v1.1
+    restart: always
     environment:
       NODE_ENV: production
     ports:
