@@ -2,7 +2,7 @@ services:
   app:
     build:
       context: .
-    image: krre/blog-web:v1.1
+    image: krre/blog-web:1.0
     restart: always
     environment:
       NODE_ENV: production
