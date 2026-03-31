@@ -26,7 +26,7 @@ RUN npm run build
 
 FROM base AS final
 
-ENV NODE_ENV production
+ENV NODE_ENV=production
 
 USER node
 
