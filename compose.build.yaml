@@ -2,4 +2,4 @@ services:
   app:
     build:
       context: .
-    image: krre/blog-web:1.0
+    image: krre/blog-web:latest
