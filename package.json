@@ -16,6 +16,11 @@
 		"test": "npm run test:unit -- --run && npm run test:e2e",
 		"test:e2e": "playwright test"
 	},
+	"overrides": {
+		"vite-plugin-devtools-json": {
+			"vite": "$vite"
+		}
+	},
 	"devDependencies": {
 		"@eslint/compat": "^2.0.4",
 		"@eslint/js": "^10.0.1",
