@@ -1,5 +1,4 @@
 import devtoolsJson from 'vite-plugin-devtools-json';
-import tailwindcss from '@tailwindcss/vite';
 import { defineConfig } from 'vitest/config';
 import { playwright } from '@vitest/browser-playwright';
 import { sveltekit } from '@sveltejs/kit/vite';
@@ -7,13 +6,13 @@ import { sveltekit } from '@sveltejs/kit/vite';
 export default defineConfig({
 	server: {
 		port: 3000,
-		host: '127.0.0.1',
+		host: '127.0.0.1'
 	},
 	preview: {
 		port: 3000,
-		host: '127.0.0.1',
+		host: '127.0.0.1'
 	},
-	plugins: [tailwindcss(), sveltekit(), devtoolsJson()],
+	plugins: [sveltekit(), devtoolsJson()],
 	test: {
 		expect: { requireAssertions: true },
 		projects: [
