@@ -1,8 +1,8 @@
 <form method="POST">
 	<label for="login">Логин: </label>
-	<input type="text" name="login" />
+	<input type="text" name="login" required />
 	<label for="password">Пароль: </label>
-	<input type="password" name="password" />
+	<input type="password" name="password" required />
 	<button>Войти</button>
 </form>
 
