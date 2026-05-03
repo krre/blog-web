@@ -1,4 +1,8 @@
-<form method="POST">
+<script>
+	import { enhance } from '$app/forms';
+</script>
+
+<form method="POST" use:enhance>
 	<label for="login">Логин: </label>
 	<input type="text" name="login" required />
 	<label for="password">Пароль: </label>
