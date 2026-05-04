@@ -6,7 +6,7 @@
 	<label for="login">Логин: </label>
 	<input type="text" name="login" required />
 	<label for="password">Пароль: </label>
-	<input type="password" name="password" required />
+	<input type="password" name="password" />
 	<button>Войти</button>
 </form>
 
