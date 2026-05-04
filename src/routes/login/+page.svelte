@@ -3,8 +3,8 @@
 </script>
 
 <form method="POST" use:enhance>
-	<label for="login">Логин: </label>
-	<input type="text" name="login" required />
+	<label for="username">Пользователь: </label>
+	<input type="text" name="username" required />
 	<label for="password">Пароль: </label>
 	<input type="password" name="password" />
 	<button>Войти</button>
