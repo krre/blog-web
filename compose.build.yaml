@@ -2,4 +2,6 @@ services:
   app:
     build:
       context: .
+      args:
+        - API_SERVER_URL=${API_SERVER_URL}
     image: krre/blog-web:latest

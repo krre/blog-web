@@ -15,6 +15,10 @@ RUN --mount=type=bind,source=package.json,target=package.json \
 
 FROM deps AS build
 
+ARG API_SERVER_URL
+
+ENV API_SERVER_URL=$API_SERVER_URL
+
 RUN --mount=type=bind,source=package.json,target=package.json \
     --mount=type=bind,source=package-lock.json,target=package-lock.json \
     --mount=type=cache,target=/root/.npm \
