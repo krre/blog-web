@@ -1,5 +1,6 @@
 import { API_SERVER_URL } from '$env/static/private';
 import { getRequestEvent } from '$app/server';
+import { error } from '@sveltejs/kit';
 
 export async function get<Request, Response>(
 	endpoint: string,
@@ -50,6 +51,10 @@ async function send<Request, Response>(
 			'x-forwarded-for': getClientAddress()
 		}
 	});
+
+	if (!response.ok) {
+		error(response.status, await response.text());
+	}
 
 	return (await response.json()) as Response;
 }
