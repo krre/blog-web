@@ -1,17 +1,18 @@
 <script lang="ts">
 	import { enhance } from '$app/forms';
 	import type { PageProps } from './$types';
+	import { i18n } from '$lib/i18n.svelte.js';
 
 	let { form }: PageProps = $props();
 </script>
 
 <form method="POST" use:enhance>
-	<label for="username">Пользователь: </label>
+	<label for="username">{i18n.t('username')}: </label>
 	<input type="text" name="username" required />
-	<label for="password">Пароль: </label>
+	<label for="password">{i18n.t('password')}: </label>
 	<input type="password" name="password" />
 	{#if form?.error}<div class="error">{form.error}</div>{/if}
-	<button>Войти</button>
+	<button>{i18n.t('login')}</button>
 </form>
 
 <style>

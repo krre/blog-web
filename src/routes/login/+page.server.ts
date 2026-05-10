@@ -1,4 +1,5 @@
 import * as api from '$lib/api';
+import { i18n } from '$lib/i18n.svelte.js';
 import { isHttpError, type HttpError } from '@sveltejs/kit';
 import { fail, redirect } from '@sveltejs/kit';
 
@@ -38,7 +39,7 @@ export const actions = {
 				console.log(error);
 
 				if (error.status == 401) {
-					return fail(error.status, { error: 'Логин или пароль неверны' });
+					return fail(error.status, { error: i18n.t('wrongLoginOrPassword') });
 				}
 			}
 
