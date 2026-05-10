@@ -41,6 +41,7 @@ class I18nManager {
 			if (typeof value === 'function') {
 				return (value as Function)(...args);
 			}
+
 			return value;
 		};
 	});
