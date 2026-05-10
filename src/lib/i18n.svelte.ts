@@ -1,29 +1,49 @@
+const defaultLang = 'ru';
+
 const translations = {
 	ru: {
-		blog: 'Блог Владимира Зарыпова',
-		underConstruction: 'В процессе разработки',
-		username: 'Пользователь',
-		password: 'Пароль',
-		login: 'Войти',
-		wrongLoginOrPassword: 'Логин или пароль неверны',
+		main: {
+			blog: 'Блог Владимира Зарыпова',
+			underConstruction: 'В процессе разработки'
+		},
+		login: {
+			username: 'Пользователь',
+			password: 'Пароль',
+			button: 'Войти',
+			wrongLoginOrPassword: 'Логин или пароль неверны'
+		},
 		error: (status: number) => `${status}. Внутренная ошибка сервера`
 	},
 	en: {
-		blog: `Vladimir Zarypov's blog`,
-		underConstruction: 'Under construction',
-		username: 'Username',
-		password: 'Password',
-		login: 'Log in',
-		wrongLoginOrPassword: 'Wrong login or password',
+		main: {
+			blog: `Vladimir Zarypov's blog`,
+			underConstruction: 'Under construction'
+		},
+		login: {
+			username: 'Username',
+			password: 'Password',
+			button: 'Log in',
+			wrongLoginOrPassword: 'Wrong login or password'
+		},
 		error: (status: number) => `${status}. Internal server error`
 	}
 };
 
-export type Locale = keyof typeof translations;
-export type TranslationKeys = keyof (typeof translations)['ru'];
+type Locale = keyof typeof translations;
+
+type LeaveKeys<T, K extends keyof T> = K extends string
+	? T[K] extends object
+		? `${K}.${LeaveKeys<T[K], keyof T[K]>}`
+		: K
+	: never;
+
+type TranslationPaths = LeaveKeys<
+	(typeof translations)[typeof defaultLang],
+	keyof (typeof translations)[typeof defaultLang]
+>;
 
 class I18nManager {
-	private locale = $state<Locale>('ru');
+	private locale = $state<Locale>(defaultLang);
 
 	get getLocale(): Locale {
 		return this.locale;
@@ -35,14 +55,20 @@ class I18nManager {
 	}
 
 	t = $derived.by(() => {
-		return (key: TranslationKeys, ...args: any[]): string => {
-			const value = translations[this.locale][key];
+		return (path: TranslationPaths, ...args: any[]): string => {
+			const keys = path.split('.');
+			let current: any = translations[this.locale];
 
-			if (typeof value === 'function') {
-				return (value as Function)(...args);
+			for (const key of keys) {
+				if (current[key] === undefined) return path;
+				current = current[key];
 			}
 
-			return value;
+			if (typeof current === 'function') {
+				return current(...args);
+			}
+
+			return String(current);
 		};
 	});
 }

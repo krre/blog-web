@@ -3,7 +3,7 @@
 </script>
 
 <svelte:head>
-	<title>{i18n.t('blog')}</title>
+	<title>{i18n.t('main.blog')}</title>
 </svelte:head>
 
-<p>{i18n.t('underConstruction')}</p>
+<p>{i18n.t('main.underConstruction')}</p>

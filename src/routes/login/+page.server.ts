@@ -39,7 +39,7 @@ export const actions = {
 				console.log(error);
 
 				if (error.status == 401) {
-					return fail(error.status, { error: i18n.t('wrongLoginOrPassword') });
+					return fail(error.status, { error: i18n.t('login.wrongLoginOrPassword') });
 				}
 			}
 

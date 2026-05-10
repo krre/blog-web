@@ -7,12 +7,12 @@
 </script>
 
 <form method="POST" use:enhance>
-	<label for="username">{i18n.t('username')}: </label>
+	<label for="username">{i18n.t('login.username')}: </label>
 	<input type="text" name="username" required />
-	<label for="password">{i18n.t('password')}: </label>
+	<label for="password">{i18n.t('login.password')}: </label>
 	<input type="password" name="password" />
 	{#if form?.error}<div class="error">{form.error}</div>{/if}
-	<button>{i18n.t('login')}</button>
+	<button>{i18n.t('login.button')}</button>
 </form>
 
 <style>
