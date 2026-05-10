@@ -1,5 +1,7 @@
 const translations = {
 	ru: {
+		blog: 'Блог Владимира Зарыпова',
+		underConstruction: 'В процессе разработки',
 		username: 'Пользователь',
 		password: 'Пароль',
 		login: 'Войти',
@@ -7,6 +9,8 @@ const translations = {
 		error: (status: number) => `${status}. Внутренная ошибка сервера`
 	},
 	en: {
+		blog: `Vladimir Zarypov's blog`,
+		underConstruction: 'Under construction',
 		username: 'Username',
 		password: 'Password',
 		login: 'Log in',

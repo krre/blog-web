@@ -1,5 +1,9 @@
+<script lang="ts">
+	import { i18n } from '$lib/i18n.svelte.js';
+</script>
+
 <svelte:head>
-    <title>Блог Владимира Зарыпова</title>
+	<title>{i18n.t('blog')}</title>
 </svelte:head>
 
-<p>Under construction</p>
+<p>{i18n.t('underConstruction')}</p>
