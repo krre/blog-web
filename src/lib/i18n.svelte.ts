@@ -6,6 +6,13 @@ const translations = {
 			blog: 'Блог Владимира Зарыпова',
 			underConstruction: 'В процессе разработки'
 		},
+		nav: {
+			blog: 'Блог',
+			new: 'Новый пост',
+			profile: 'Профиль',
+			about: 'Об авторе',
+			logout: 'Выйти'
+		},
 		login: {
 			username: 'Пользователь',
 			password: 'Пароль',
@@ -18,6 +25,13 @@ const translations = {
 		main: {
 			blog: `Vladimir Zarypov's blog`,
 			underConstruction: 'Under construction'
+		},
+		nav: {
+			blog: 'Blog',
+			new: 'New Post',
+			profile: 'Profile',
+			about: 'About',
+			logout: 'Logout'
 		},
 		login: {
 			username: 'Username',
