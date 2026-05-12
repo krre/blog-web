@@ -1,4 +1,7 @@
 // See https://svelte.dev/docs/kit/types#app.d.ts
+
+import type { User } from '$lib/types';
+
 // for information about these interfaces
 declare global {
 	namespace App {
@@ -9,7 +12,7 @@ declare global {
 		// interface Platform {}
 
 		interface Locals {
-			userId: number;
+			user: User;
 		}
 	}
 }
