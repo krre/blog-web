@@ -8,7 +8,7 @@ const translations = {
 		},
 		nav: {
 			blog: 'Блог',
-			new: 'Новый пост',
+			append: 'Добавить',
 			profile: 'Профиль',
 			about: 'Об авторе',
 			logout: 'Выйти'
@@ -28,7 +28,7 @@ const translations = {
 		},
 		nav: {
 			blog: 'Blog',
-			new: 'New Post',
+			append: 'Append',
 			profile: 'Profile',
 			about: 'About',
 			logout: 'Logout'

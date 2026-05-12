@@ -12,7 +12,7 @@
 
 	const menuItems: MenuItem[] = $derived([
 		{ href: '/', label: i18n.t('nav.blog'), visible: true },
-		{ href: '/new', label: i18n.t('nav.new'), visible: isAdmin },
+		{ href: '/append', label: i18n.t('nav.append'), visible: isAdmin },
 		{ href: '/profile', label: i18n.t('nav.profile'), visible: isAdmin },
 		{ href: '/about', label: i18n.t('nav.about'), visible: true },
 		{ href: '/logout', label: i18n.t('nav.logout'), visible: isAdmin }
