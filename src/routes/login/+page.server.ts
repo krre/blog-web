@@ -12,6 +12,10 @@ interface JWT {
 	token: string;
 }
 
+export async function load({ locals }) {
+	if (locals.user) redirect(307, '/');
+}
+
 export const actions = {
 	default: async ({ cookies, request }) => {
 		const data = await request.formData();
