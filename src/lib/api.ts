@@ -5,7 +5,7 @@ import { error } from '@sveltejs/kit';
 export async function get<Request, Response>(
 	endpoint: string,
 	params?: Request
-): Promise<Response | void> {
+): Promise<Response> {
 	return send(endpoint, 'GET', params);
 }
 
