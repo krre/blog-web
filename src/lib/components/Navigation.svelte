@@ -2,7 +2,7 @@
 	import { i18n } from '$lib/i18n.svelte';
 	import { page } from '$app/state';
 
-	const isAdmin = page.data.user ? true : false;
+	const isAdmin = page.data.admin ? true : false;
 
 	interface MenuItem {
 		href: string;
