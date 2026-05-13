@@ -2,6 +2,7 @@ import * as api from '$lib/api';
 import { i18n } from '$lib/i18n.svelte.js';
 import { isHttpError, type HttpError } from '@sveltejs/kit';
 import { fail, redirect } from '@sveltejs/kit';
+import type { PageServerLoad } from './$types';
 
 interface User {
 	username?: string;
@@ -12,9 +13,9 @@ interface JWT {
 	token: string;
 }
 
-export async function load({ locals }) {
+export const load: PageServerLoad = async ({ locals }) => {
 	if (locals.user) redirect(307, '/');
-}
+};
 
 export const actions = {
 	default: async ({ cookies, request }) => {
