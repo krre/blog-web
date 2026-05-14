@@ -1,40 +1,6 @@
 const defaultLang = 'ru';
 
 const translations = {
-	ru: {
-		nav: {
-			blog: 'Блог',
-			append: 'Добавить',
-			profile: 'Профиль',
-			about: 'Об авторе',
-			logout: 'Выйти'
-		},
-		main: {
-			title: 'Блог Владимира Зарыпова',
-			underConstruction: 'В процессе разработки'
-		},
-		login: {
-			title: 'Войти',
-			username: 'Пользователь',
-			password: 'Пароль',
-			button: 'Войти',
-			wrongLoginOrPassword: 'Логин или пароль неверны'
-		},
-		append: {
-			title: 'Добавить'
-		},
-		profile: {
-			title: 'Профиль',
-			username: 'Пользователь',
-			firstName: 'Имя',
-			lastName: 'Фамилия',
-			update: 'Обновить'
-		},
-		about: {
-			title: 'Об авторе'
-		},
-		error: (status: number) => `${status}. Внутренная ошибка сервера`
-	},
 	en: {
 		nav: {
 			blog: 'Blog',
@@ -68,6 +34,40 @@ const translations = {
 			title: 'About'
 		},
 		error: (status: number) => `${status}. Internal server error`
+	},
+	ru: {
+		nav: {
+			blog: 'Блог',
+			append: 'Добавить',
+			profile: 'Профиль',
+			about: 'Об авторе',
+			logout: 'Выйти'
+		},
+		main: {
+			title: 'Блог Владимира Зарыпова',
+			underConstruction: 'В процессе разработки'
+		},
+		login: {
+			title: 'Войти',
+			username: 'Пользователь',
+			password: 'Пароль',
+			button: 'Войти',
+			wrongLoginOrPassword: 'Логин или пароль неверны'
+		},
+		append: {
+			title: 'Добавить'
+		},
+		profile: {
+			title: 'Профиль',
+			username: 'Пользователь',
+			firstName: 'Имя',
+			lastName: 'Фамилия',
+			update: 'Обновить'
+		},
+		about: {
+			title: 'Об авторе'
+		},
+		error: (status: number) => `${status}. Внутренная ошибка сервера`
 	}
 };
 
