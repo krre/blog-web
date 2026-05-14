@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Page from '$lib/components/Page.svelte';
 	import { i18n } from '$lib/i18n.svelte';
 	import type { PageProps } from '../$types';
 
@@ -6,6 +7,6 @@
 	console.log({ data });
 </script>
 
-<svelte:head>
-	<title>{i18n.t('profile.title')}</title>
-</svelte:head>
+<Page title={i18n.t('profile.title')}>
+	<p></p>
+</Page>

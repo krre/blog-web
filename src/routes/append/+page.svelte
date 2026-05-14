@@ -1,7 +1,8 @@
 <script lang="ts">
+	import Page from '$lib/components/Page.svelte';
 	import { i18n } from '$lib/i18n.svelte.js';
 </script>
 
-<svelte:head>
-	<title>{i18n.t('append.title')}</title>
-</svelte:head>
+<Page title={i18n.t('append.title')}>
+	<p></p>
+</Page>
