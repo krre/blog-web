@@ -14,6 +14,7 @@ const translations = {
 			logout: 'Выйти'
 		},
 		login: {
+			title: 'Войти',
 			username: 'Пользователь',
 			password: 'Пароль',
 			button: 'Войти',
@@ -34,6 +35,7 @@ const translations = {
 			logout: 'Logout'
 		},
 		login: {
+			title: 'Log In',
 			username: 'Username',
 			password: 'Password',
 			button: 'Log in',

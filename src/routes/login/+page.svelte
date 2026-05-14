@@ -5,6 +5,10 @@
 	let { form }: PageProps = $props();
 </script>
 
+<svelte:head>
+	<title>{i18n.t('login.title')}</title>
+</svelte:head>
+
 <form method="POST">
 	<label for="username">{i18n.t('login.username')}: </label>
 	<input type="text" name="username" required />
