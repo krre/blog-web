@@ -2,16 +2,16 @@ const defaultLang = 'ru';
 
 const translations = {
 	ru: {
-		main: {
-			title: 'Блог Владимира Зарыпова',
-			underConstruction: 'В процессе разработки'
-		},
 		nav: {
 			blog: 'Блог',
 			append: 'Добавить',
 			profile: 'Профиль',
 			about: 'Об авторе',
 			logout: 'Выйти'
+		},
+		main: {
+			title: 'Блог Владимира Зарыпова',
+			underConstruction: 'В процессе разработки'
 		},
 		login: {
 			title: 'Войти',
@@ -32,16 +32,16 @@ const translations = {
 		error: (status: number) => `${status}. Внутренная ошибка сервера`
 	},
 	en: {
-		main: {
-			title: `Vladimir Zarypov's blog`,
-			underConstruction: 'Under construction'
-		},
 		nav: {
 			blog: 'Blog',
 			append: 'Append',
 			profile: 'Profile',
 			about: 'About',
 			logout: 'Logout'
+		},
+		main: {
+			title: `Vladimir Zarypov's blog`,
+			underConstruction: 'Under construction'
 		},
 		login: {
 			title: 'Log In',
