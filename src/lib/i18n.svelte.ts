@@ -3,7 +3,7 @@ const defaultLang = 'ru';
 const translations = {
 	ru: {
 		main: {
-			blog: 'Блог Владимира Зарыпова',
+			title: 'Блог Владимира Зарыпова',
 			underConstruction: 'В процессе разработки'
 		},
 		nav: {
@@ -23,7 +23,7 @@ const translations = {
 	},
 	en: {
 		main: {
-			blog: `Vladimir Zarypov's blog`,
+			title: `Vladimir Zarypov's blog`,
 			underConstruction: 'Under construction'
 		},
 		nav: {
