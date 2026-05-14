@@ -24,7 +24,11 @@ const translations = {
 			title: 'Добавить'
 		},
 		profile: {
-			title: 'Профиль'
+			title: 'Профиль',
+			username: 'Пользователь',
+			firstName: 'Имя',
+			lastName: 'Фамилия',
+			update: 'Обновить'
 		},
 		about: {
 			title: 'Об авторе'
@@ -54,7 +58,11 @@ const translations = {
 			title: 'Append'
 		},
 		profile: {
-			title: 'Profile'
+			title: 'Profile',
+			username: 'Username',
+			firstName: 'First name',
+			lastName: 'Last name',
+			update: 'Update'
 		},
 		about: {
 			title: 'About'
