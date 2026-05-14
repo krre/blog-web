@@ -20,6 +20,9 @@ const translations = {
 			button: 'Войти',
 			wrongLoginOrPassword: 'Логин или пароль неверны'
 		},
+		append: {
+			title: 'Добавить'
+		},
 		profile: {
 			title: 'Профиль'
 		},
@@ -43,6 +46,9 @@ const translations = {
 			password: 'Password',
 			button: 'Log in',
 			wrongLoginOrPassword: 'Wrong login or password'
+		},
+		append: {
+			title: 'Append'
 		},
 		profile: {
 			title: 'Profile'
