@@ -26,6 +26,9 @@ const translations = {
 		profile: {
 			title: 'Профиль'
 		},
+		about: {
+			title: 'Об авторе'
+		},
 		error: (status: number) => `${status}. Внутренная ошибка сервера`
 	},
 	en: {
@@ -52,6 +55,9 @@ const translations = {
 		},
 		profile: {
 			title: 'Profile'
+		},
+		about: {
+			title: 'About'
 		},
 		error: (status: number) => `${status}. Internal server error`
 	}
