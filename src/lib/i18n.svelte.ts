@@ -20,6 +20,9 @@ const translations = {
 			button: 'Войти',
 			wrongLoginOrPassword: 'Логин или пароль неверны'
 		},
+		profile: {
+			title: 'Профиль'
+		},
 		error: (status: number) => `${status}. Внутренная ошибка сервера`
 	},
 	en: {
@@ -40,6 +43,9 @@ const translations = {
 			password: 'Password',
 			button: 'Log in',
 			wrongLoginOrPassword: 'Wrong login or password'
+		},
+		profile: {
+			title: 'Profile'
 		},
 		error: (status: number) => `${status}. Internal server error`
 	}
