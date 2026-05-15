@@ -42,14 +42,22 @@ async function send<Request, Response>(
 	method: string,
 	params?: Request
 ): Promise<Response> {
-	const { getClientAddress } = getRequestEvent();
+	const { getClientAddress, cookies } = getRequestEvent();
+	const headers: HeadersInit = {
+		'content-type': 'application/json',
+		'x-forwarded-for': getClientAddress()
+	};
+
+	const jwt = cookies.get('jwt');
+
+	if (jwt) {
+		headers['authorization'] = `bearer ${jwt}`;
+	}
+
 	const response = await fetch(`${API_SERVER_URL}/${endpoint}`, {
 		method,
 		body: JSON.stringify(params),
-		headers: {
-			'content-type': 'application/json',
-			'x-forwarded-for': getClientAddress()
-		}
+		headers
 	});
 
 	if (!response.ok) {
