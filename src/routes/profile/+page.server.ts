@@ -2,6 +2,7 @@ import * as api from '$lib/api';
 import type { PageServerLoad } from './$types';
 
 interface User {
+	username: string;
 	first_name: string;
 	last_name: string;
 }
