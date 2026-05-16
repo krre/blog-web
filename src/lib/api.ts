@@ -56,7 +56,7 @@ async function send<Request, Response>(
 
 	const response = await fetch(`${API_SERVER_URL}/${endpoint}`, {
 		method,
-		body: JSON.stringify(params),
+		body: params ? JSON.stringify(params) : undefined,
 		headers
 	});
 
@@ -64,5 +64,11 @@ async function send<Request, Response>(
 		error(response.status, await response.text());
 	}
 
-	return (await response.json()) as Response;
+	const text = await response.text();
+
+	if (!text) {
+		return undefined as Response;
+	}
+
+	return JSON.parse(text) as Response;
 }
