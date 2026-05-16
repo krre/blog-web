@@ -1,27 +1,27 @@
 import * as api from '$lib/api';
 import type { PageServerLoad } from './$types';
 
-interface User {
+interface Profile {
 	username?: string;
 	first_name?: string;
 	last_name?: string;
 }
 
-export const load: PageServerLoad = async ({ locals }) => {
-	let user: User = await api.get(`users/${locals.user?.id}`);
-	return { user };
+export const load: PageServerLoad = async () => {
+	let profile: Profile = await api.get('profile');
+	return { profile };
 };
 
 export const actions = {
-	default: async ({ request, locals }) => {
+	default: async ({ request }) => {
 		const data = await request.formData();
 
-		const user: User = {
+		const profile: Profile = {
 			first_name: data.get('first_name')?.toString(),
 			last_name: data.get('last_name')?.toString()
 		};
 
-		await api.post(`users/${locals.user?.id}`, user);
-		console.log({ user });
+		await api.post('profile', profile);
+		console.log({ profile });
 	}
 };
