@@ -20,9 +20,10 @@ export const load: PageServerLoad = async ({ locals }) => {
 export const actions = {
 	default: async ({ cookies, request }) => {
 		const data = await request.formData();
+		const username = data.get('username')?.toString();
 
 		const user: User = {
-			username: data.get('username')?.toString(),
+			username,
 			password: data.get('password')?.toString()
 		};
 
@@ -44,7 +45,7 @@ export const actions = {
 				console.log(error);
 
 				if (error.status == 401) {
-					return fail(error.status, { error: i18n.t('login.wrongLoginOrPassword') });
+					return fail(error.status, { error: i18n.t('login.wrongLoginOrPassword'), username });
 				}
 			}
 
