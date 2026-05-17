@@ -10,9 +10,9 @@
 <Page title={i18n.t('login.title')}>
 	<Form buttonText={i18n.t('login.button')}>
 		<label for="username">{i18n.t('login.username')}: </label>
-		<input type="text" name="username" required />
+		<input type="text" id="username" name="username" required />
 		<label for="password">{i18n.t('login.password')}: </label>
-		<input type="password" name="password" />
+		<input type="password" id="password" name="password" />
 		{#if form?.error}<div class="error">{form.error}</div>{/if}
 	</Form>
 </Page>

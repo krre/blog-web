@@ -10,10 +10,10 @@
 <Page title={i18n.t('profile.title')}>
 	<Form buttonText={i18n.t('profile.update')}>
 		<label for="username">{i18n.t('profile.username')}:</label>
-		<input type="text" name="username" readonly value={data.profile.username} />
-		<label for="first_name">{i18n.t('profile.firstName')}:</label>
-		<input type="text" name="first_name" required value={data.profile.first_name} />
-		<label for="last_name">{i18n.t('profile.lastName')}:</label>
-		<input type="text" name="last_name" value={data.profile.last_name} />
+		<input type="text" id="username" name="username" readonly value={data.profile.username} />
+		<label for="first-name">{i18n.t('profile.firstName')}:</label>
+		<input type="text" id="first-name" name="first_name" required value={data.profile.first_name} />
+		<label for="last-name">{i18n.t('profile.lastName')}:</label>
+		<input type="text" id="last-name" name="last_name" value={data.profile.last_name} />
 	</Form>
 </Page>
