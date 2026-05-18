@@ -1,4 +1,5 @@
 import * as api from '$lib/api';
+import { i18n } from '$lib/i18n.svelte';
 import type { PageServerLoad } from './$types';
 
 interface Profile {
@@ -22,6 +23,6 @@ export const actions = {
 		};
 
 		await api.post('profile', profile);
-		console.log({ profile });
+		return { success: i18n.t('profile.success') };
 	}
 };

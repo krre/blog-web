@@ -8,17 +8,10 @@
 </script>
 
 <Page title={i18n.t('login.title')}>
-	<Form buttonText={i18n.t('login.button')}>
+	<Form buttonText={i18n.t('login.button')} error={form?.error}>
 		<label for="username">{i18n.t('login.username')}: </label>
 		<input type="text" id="username" name="username" required value={form?.username ?? ''} />
 		<label for="password">{i18n.t('login.password')}: </label>
 		<input type="password" id="password" name="password" />
-		{#if form?.error}<div class="error">{form.error}</div>{/if}
 	</Form>
 </Page>
-
-<style>
-	.error {
-		color: red;
-	}
-</style>

@@ -1,14 +1,18 @@
 <script lang="ts">
 	interface Props {
+		success?: string;
+		error?: string;
 		buttonText: string;
 		children: import('svelte').Snippet;
 	}
 
-	let { buttonText, children }: Props = $props();
+	let { success, error, buttonText, children }: Props = $props();
 </script>
 
 <form method="POST">
 	{@render children()}
+	{#if success}<div class="success">{success}</div>{/if}
+	{#if error}<div class="error">{error}</div>{/if}
 	<button>{buttonText}</button>
 </form>
 
@@ -22,5 +26,13 @@
 
 	form button {
 		justify-self: end;
+	}
+
+	.success {
+		color: green;
+	}
+
+	.error {
+		color: red;
 	}
 </style>

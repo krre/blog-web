@@ -28,7 +28,8 @@ const translations = {
 			username: 'Username',
 			firstName: 'First name',
 			lastName: 'Last name',
-			update: 'Update'
+			update: 'Update',
+			success: 'Profile updated'
 		},
 		about: {
 			title: 'About'
@@ -62,7 +63,8 @@ const translations = {
 			username: 'Пользователь',
 			firstName: 'Имя',
 			lastName: 'Фамилия',
-			update: 'Обновить'
+			update: 'Обновить',
+			success: 'Профиль обновлён'
 		},
 		about: {
 			title: 'Об авторе'
