@@ -29,7 +29,12 @@ const translations = {
 			firstName: 'First name',
 			lastName: 'Last name',
 			update: 'Update',
-			success: 'Profile updated'
+			profileUpdated: 'Profile updated',
+			password: 'Password',
+			confirmPassword: 'Confirm password',
+			change: 'Change',
+			differentPasswords: `Passwords don't match`,
+			passwordUpdated: 'Password changed'
 		},
 		about: {
 			title: 'About'
@@ -64,7 +69,12 @@ const translations = {
 			firstName: 'Имя',
 			lastName: 'Фамилия',
 			update: 'Обновить',
-			success: 'Профиль обновлён'
+			profileUpdated: 'Профиль обновлён',
+			password: 'Пароль',
+			confirmPassword: 'Пароль (ещё раз)',
+			change: 'Изменить',
+			differentPasswords: `Пароли не совпадают`,
+			passwordUpdated: 'Пароль изменён'
 		},
 		about: {
 			title: 'Об авторе'
