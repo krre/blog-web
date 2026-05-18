@@ -42,7 +42,6 @@ export const actions = {
 		} catch (e) {
 			if (isHttpError(e)) {
 				const error = e as HttpError;
-				console.log(error);
 
 				if (error.status == 401) {
 					return fail(error.status, { error: i18n.t('login.wrongLoginOrPassword'), username });
