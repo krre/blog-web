@@ -17,7 +17,7 @@ const translations = {
 			title: 'Log In',
 			username: 'Username',
 			password: 'Password',
-			button: 'Log in',
+			loginButton: 'Log in',
 			wrongLoginOrPassword: 'Wrong login or password'
 		},
 		append: {
@@ -28,11 +28,11 @@ const translations = {
 			username: 'Username',
 			firstName: 'First name',
 			lastName: 'Last name',
-			update: 'Update',
+			updateButton: 'Update',
 			profileUpdated: 'Profile updated',
 			password: 'Password',
 			confirmPassword: 'Confirm password',
-			change: 'Change',
+			changeButton: 'Change',
 			differentPasswords: `Passwords don't match`,
 			passwordUpdated: 'Password changed'
 		},
@@ -57,7 +57,7 @@ const translations = {
 			title: 'Войти',
 			username: 'Пользователь',
 			password: 'Пароль',
-			button: 'Войти',
+			loginButton: 'Войти',
 			wrongLoginOrPassword: 'Логин или пароль неверны'
 		},
 		append: {
@@ -68,11 +68,11 @@ const translations = {
 			username: 'Пользователь',
 			firstName: 'Имя',
 			lastName: 'Фамилия',
-			update: 'Обновить',
+			updateButton: 'Обновить',
 			profileUpdated: 'Профиль обновлён',
 			password: 'Пароль',
 			confirmPassword: 'Пароль (ещё раз)',
-			change: 'Изменить',
+			changeButton: 'Изменить',
 			differentPasswords: `Пароли не совпадают`,
 			passwordUpdated: 'Пароль изменён'
 		},

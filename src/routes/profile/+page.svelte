@@ -8,7 +8,11 @@
 </script>
 
 <Page title={i18n.t('profile.title')}>
-	<Form action="?/update" buttonText={i18n.t('profile.update')} success={form?.profileSuccess}>
+	<Form
+		action="?/update"
+		buttonText={i18n.t('profile.updateButton')}
+		success={form?.profileSuccess}
+	>
 		<label for="username">{i18n.t('profile.username')}:</label>
 		<input type="text" id="username" name="username" readonly value={data.profile.username} />
 		<label for="first-name">{i18n.t('profile.firstName')}:</label>
@@ -18,7 +22,7 @@
 	</Form>
 	<Form
 		action="?/changePassword"
-		buttonText={i18n.t('profile.change')}
+		buttonText={i18n.t('profile.changeButton')}
 		success={form?.passwordSuccess}
 		error={form?.passwordError}
 	>

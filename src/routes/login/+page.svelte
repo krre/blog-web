@@ -8,7 +8,7 @@
 </script>
 
 <Page title={i18n.t('login.title')}>
-	<Form buttonText={i18n.t('login.button')} error={form?.error}>
+	<Form buttonText={i18n.t('login.loginButton')} error={form?.error}>
 		<label for="username">{i18n.t('login.username')}: </label>
 		<input type="text" id="username" name="username" required value={form?.username ?? ''} />
 		<label for="password">{i18n.t('login.password')}: </label>
