@@ -22,7 +22,7 @@
 		display: grid;
 		gap: 0.5em;
 		max-width: 300px;
-		margin: 100px auto;
+		margin: auto;
 	}
 
 	form button {
