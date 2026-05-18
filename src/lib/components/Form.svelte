@@ -1,15 +1,16 @@
 <script lang="ts">
 	interface Props {
+		action?: string;
 		success?: string;
 		error?: string;
 		buttonText: string;
 		children: import('svelte').Snippet;
 	}
 
-	let { success, error, buttonText, children }: Props = $props();
+	let { action, success, error, buttonText, children }: Props = $props();
 </script>
 
-<form method="POST">
+<form method="POST" {action}>
 	{@render children()}
 	{#if success}<div class="success">{success}</div>{/if}
 	{#if error}<div class="error">{error}</div>{/if}
