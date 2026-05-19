@@ -9,6 +9,10 @@ interface Profile {
 	last_name?: string;
 }
 
+interface Password {
+	password: string;
+}
+
 export const load: PageServerLoad = async () => {
 	let profile: Profile = await api.get('profile');
 	return { profile };
@@ -35,6 +39,12 @@ export const actions = {
 		if (password != confirm_password) {
 			return fail(400, { passwordError: i18n.t('profile.differentPasswords') });
 		}
+
+		const params: Password = {
+			password: password!
+		};
+
+		await api.patch('profile/password', params);
 
 		return { passwordSuccess: i18n.t('profile.passwordUpdated') };
 	}
