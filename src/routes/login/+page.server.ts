@@ -3,6 +3,7 @@ import { i18n } from '$lib/i18n.svelte.js';
 import { isHttpError, type HttpError } from '@sveltejs/kit';
 import { fail, redirect } from '@sveltejs/kit';
 import type { PageServerLoad } from './$types';
+import { saveJwt } from '$lib/utils.js';
 
 interface User {
 	username?: string;
@@ -29,15 +30,7 @@ export const actions = {
 
 		try {
 			const jwt: JWT = await api.post('auth/login', user);
-
-			cookies.set('jwt', jwt.token, {
-				path: '/',
-				httpOnly: true,
-				sameSite: 'lax',
-				secure: true,
-				maxAge: 60 * 60 * 24 * 365 // 1 year
-			});
-
+			saveJwt(cookies, jwt.token);
 			redirect(303, '/');
 		} catch (e) {
 			if (isHttpError(e)) {

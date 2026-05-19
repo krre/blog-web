@@ -1,5 +1,6 @@
 import * as api from '$lib/api';
 import { i18n } from '$lib/i18n.svelte';
+import { saveJwt } from '$lib/utils';
 import { fail } from '@sveltejs/kit';
 import type { PageServerLoad } from './$types';
 
@@ -13,13 +14,17 @@ interface Password {
 	password: string;
 }
 
+interface JWT {
+	token: string;
+}
+
 export const load: PageServerLoad = async () => {
 	let profile: Profile = await api.get('profile');
 	return { profile };
 };
 
 export const actions = {
-	update: async ({ request }) => {
+	update: async ({ request, cookies }) => {
 		const data = await request.formData();
 
 		const profile: Profile = {
@@ -27,7 +32,8 @@ export const actions = {
 			last_name: data.get('last_name')?.toString()
 		};
 
-		await api.post('profile', profile);
+		const jwt: JWT = await api.post('profile', profile);
+		saveJwt(cookies, jwt.token);
 		return { profileSuccess: i18n.t('profile.profileUpdated') };
 	},
 
