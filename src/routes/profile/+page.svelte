@@ -19,6 +19,12 @@
 		<input type="text" id="first-name" name="first_name" required value={data.profile.first_name} />
 		<label for="last-name">{i18n.t('profile.lastName')}:</label>
 		<input type="text" id="last-name" name="last_name" value={data.profile.last_name} />
+		<label for="email">E-mail:</label>
+		<input type="email" id="email" name="email" value={data.profile.email} />
+		<label for="location">{i18n.t('profile.location')}:</label>
+		<input type="text" id="location" name="location" value={data.profile.location} />
+		<label for="bio">{i18n.t('profile.bio')}:</label>
+		<input type="text" id="bio" name="bio" value={data.profile.bio} />
 	</Form>
 	<Form
 		action="?/changePassword"

@@ -8,6 +8,9 @@ interface Profile {
 	username?: string;
 	first_name?: string;
 	last_name?: string;
+	email?: string;
+	location?: string;
+	bio?: string;
 }
 
 interface Password {
@@ -29,7 +32,10 @@ export const actions = {
 
 		const profile: Profile = {
 			first_name: data.get('first_name')?.toString(),
-			last_name: data.get('last_name')?.toString()
+			last_name: data.get('last_name')?.toString(),
+			email: data.get('email')?.toString(),
+			location: data.get('location')?.toString(),
+			bio: data.get('bio')?.toString()
 		};
 
 		const jwt: JWT = await api.post('profile', profile);
