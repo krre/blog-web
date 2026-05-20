@@ -37,7 +37,7 @@ export const actions = {
 		return { profileSuccess: i18n.t('profile.profileUpdated') };
 	},
 
-	changePassword: async ({ request }) => {
+	changePassword: async ({ request, cookies }) => {
 		const data = await request.formData();
 		const password = data.get('password')?.toString();
 		const confirm_password = data.get('confirm_password')?.toString();
@@ -50,7 +50,8 @@ export const actions = {
 			password: password!
 		};
 
-		await api.patch('profile/password', params);
+		const jwt: JWT = await api.patch('profile/password', params);
+		saveJwt(cookies, jwt.token);
 
 		return { passwordSuccess: i18n.t('profile.passwordUpdated') };
 	}
