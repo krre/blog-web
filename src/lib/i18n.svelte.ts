@@ -39,7 +39,8 @@ const translations = {
 			passwordUpdated: 'Password changed'
 		},
 		about: {
-			title: 'About'
+			title: 'About',
+			name: 'Name'
 		},
 		error: (status: number) => `${status}. Internal server error`
 	},
@@ -81,7 +82,8 @@ const translations = {
 			passwordUpdated: 'Пароль изменён'
 		},
 		about: {
-			title: 'Об авторе'
+			title: 'Об авторе',
+			name: 'Имя'
 		},
 		error: (status: number) => `${status}. Внутренная ошибка сервера`
 	}

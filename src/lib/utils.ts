@@ -9,3 +9,7 @@ export function saveJwt(cookies: Cookies, jwt: string) {
 		maxAge: 60 * 60 * 24 * 365 // 1 year
 	});
 }
+
+export function fullUserName(firstName: string, lastName: string): string {
+	return !lastName.length ? firstName : firstName + ' ' + lastName;
+}
