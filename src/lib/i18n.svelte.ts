@@ -23,6 +23,11 @@ const translations = {
 		append: {
 			title: 'Append'
 		},
+		editor: {
+			title: 'Title',
+			post: 'Post',
+			sendButton: 'Send'
+		},
 		profile: {
 			title: 'Profile',
 			username: 'Username',
@@ -65,6 +70,11 @@ const translations = {
 		},
 		append: {
 			title: 'Добавить'
+		},
+		editor: {
+			title: 'Заголовок',
+			post: 'Пост',
+			sendButton: 'Отправить'
 		},
 		profile: {
 			title: 'Профиль',
