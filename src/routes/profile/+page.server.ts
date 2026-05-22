@@ -1,7 +1,7 @@
 import * as api from '$lib/api';
 import { i18n } from '$lib/i18n.svelte';
 import { saveJwt } from '$lib/utils';
-import { fail } from '@sveltejs/kit';
+import { error, fail } from '@sveltejs/kit';
 import type { PageServerLoad } from './$types';
 
 interface Profile {
@@ -21,7 +21,9 @@ interface JWT {
 	token: string;
 }
 
-export const load: PageServerLoad = async () => {
+export const load: PageServerLoad = async ({ locals }) => {
+	if (!locals.user) return error(401);
+
 	let profile: Profile = await api.get('profile');
 	return { profile };
 };
