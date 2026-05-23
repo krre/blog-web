@@ -1,7 +1,8 @@
 import { redirect } from '@sveltejs/kit';
+import type { RequestHandler } from './$types';
 
-export function GET({ cookies, locals }) {
+export const GET: RequestHandler = ({ cookies, locals }) => {
 	cookies.delete('jwt', { path: '/' });
 	locals.user = undefined;
 	redirect(303, '/');
-}
+};
