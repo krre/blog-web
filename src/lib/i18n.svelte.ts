@@ -26,6 +26,11 @@ const translations = {
 		editor: {
 			title: 'Title',
 			post: 'Post',
+			status: {
+				title: 'Status',
+				published: 'Published',
+				hided: 'Hided'
+			},
 			sendButton: 'Send'
 		},
 		profile: {
@@ -74,6 +79,11 @@ const translations = {
 		editor: {
 			title: 'Заголовок',
 			post: 'Пост',
+			status: {
+				title: 'Статус',
+				published: 'Опубликовано',
+				hided: 'Спрятано'
+			},
 			sendButton: 'Отправить'
 		},
 		profile: {

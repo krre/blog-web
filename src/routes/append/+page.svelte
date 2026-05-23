@@ -11,8 +11,19 @@
 <Page title={i18n.t('append.title')}>
 	<Form width={60} action="?/append" buttonText={i18n.t('editor.sendButton')}>
 		<label for="title">{i18n.t('editor.title')}:</label>
-		<input type="text" id="title" name="title" />
+		<input type="text" id="title" name="title" required />
+		<label for="status">{i18n.t('editor.status.title')}:</label>
+		<select class="state-selector" id="status" name="status">
+			<option value="published">{i18n.t('editor.status.published')}</option>
+			<option value="hided">{i18n.t('editor.status.hided')}</option>
+		</select>
 		<label for="post">{i18n.t('editor.post')}:</label>
 		<textarea id="post" name="post" rows="40">{post}</textarea>
 	</Form>
 </Page>
+
+<style>
+	.state-selector {
+		justify-self: start;
+	}
+</style>
