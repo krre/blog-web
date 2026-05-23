@@ -9,6 +9,6 @@
 
 <Page title={i18n.t('main.title')}>
 	{#each data.posts as post}
-		<p><a href="/posts/{post.id}">{formatDateTime(post.created_at)} {post.title}</a></p>
+		<p><a href="/post/{post.id}">{formatDateTime(post.created_at)} {post.title}</a></p>
 	{/each}
 </Page>

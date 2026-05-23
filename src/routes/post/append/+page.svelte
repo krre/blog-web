@@ -2,10 +2,16 @@
 	import Page from '$lib/components/Page.svelte';
 	import Form from '$lib/components/Form.svelte';
 	import { i18n } from '$lib/i18n.svelte.js';
-	// import type { PageProps } from './$types';
+	import { goto } from '$app/navigation';
+	import type { PageProps } from './$types';
 
-	// let { data }: PageProps = $props();
-	let post = $state('');
+	let { form }: PageProps = $props();
+
+	$effect(() => {
+		if (form?.id) {
+			goto(`/post/${form.id}`);
+		}
+	});
 </script>
 
 <Page title={i18n.t('append.title')}>
@@ -18,7 +24,7 @@
 			<option value="hided">{i18n.t('editor.status.hided')}</option>
 		</select>
 		<label for="post">{i18n.t('editor.post')}:</label>
-		<textarea id="post" name="post" rows="40">{post}</textarea>
+		<textarea id="post" name="post" rows="40"></textarea>
 	</Form>
 </Page>
 

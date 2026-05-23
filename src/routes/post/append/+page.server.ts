@@ -27,6 +27,6 @@ export const actions = {
 		};
 
 		const postId: PostId = await api.post('posts', post);
-		console.log({ postId });
+		return { id: postId.id };
 	}
 };
