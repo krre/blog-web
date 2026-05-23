@@ -1,4 +1,5 @@
 import type { Cookies } from '@sveltejs/kit';
+import { format } from 'date-fns';
 
 export function saveJwt(cookies: Cookies, jwt: string) {
 	cookies.set('jwt', jwt, {
@@ -12,4 +13,8 @@ export function saveJwt(cookies: Cookies, jwt: string) {
 
 export function fullUserName(firstName: string, lastName: string): string {
 	return !lastName.length ? firstName : firstName + ' ' + lastName;
+}
+
+export function formatDateTime(date: Date): string {
+	return format(date, 'dd.MM.yyyy HH:mm');
 }
