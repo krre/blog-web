@@ -33,6 +33,9 @@ const translations = {
 			},
 			sendButton: 'Send'
 		},
+		post: {
+			deleteButton: 'Delete'
+		},
 		profile: {
 			title: 'Profile',
 			username: 'Username',
@@ -85,6 +88,9 @@ const translations = {
 				hided: 'Спрятано'
 			},
 			sendButton: 'Отправить'
+		},
+		post: {
+			deleteButton: 'Удалить'
 		},
 		profile: {
 			title: 'Профиль',
