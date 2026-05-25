@@ -3,21 +3,25 @@ import * as consts from '$lib/consts';
 import { error } from '@sveltejs/kit';
 import type { PageServerLoad } from './$types';
 
-interface Post {
-	id: number;
-	title: string;
-	post: string;
-	is_published: boolean;
+namespace Request {
+	export interface Post {
+		title?: string;
+		post?: string;
+		is_published: boolean;
+	}
 }
 
-interface UpdatedPost {
-	title?: string;
-	post?: string;
-	is_published: boolean;
+namespace Response {
+	export interface Post {
+		id: number;
+		title: string;
+		post: string;
+		is_published: boolean;
+	}
 }
 
 export const load: PageServerLoad = async ({ params }) => {
-	let post: Post = await api.get(`posts/${params.id}`);
+	let post: Response.Post = await api.get(`posts/${params.id}`);
 	return { post };
 };
 
@@ -27,7 +31,7 @@ export const actions = {
 
 		const data = await request.formData();
 
-		const post: UpdatedPost = {
+		const post: Request.Post = {
 			title: data.get('title')?.toString(),
 			post: data.get('post')?.toString(),
 			is_published: data.get('status')?.toString() == consts.PostState.Published
