@@ -1,4 +1,5 @@
 import * as api from '$lib/api';
+import * as consts from '$lib/consts';
 import { error } from '@sveltejs/kit';
 import type { PageServerLoad } from './$types';
 
@@ -23,7 +24,7 @@ export const actions = {
 		const post: Post = {
 			title: data.get('title')?.toString(),
 			post: data.get('post')?.toString(),
-			is_published: data.get('status')?.toString() == 'published'
+			is_published: data.get('status')?.toString() == consts.PostState.Published
 		};
 
 		const postId: PostId = await api.post('posts', post);

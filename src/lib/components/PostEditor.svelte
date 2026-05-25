@@ -1,6 +1,7 @@
 <script lang="ts">
 	import Form from '$lib/components/Form.svelte';
 	import { i18n } from '$lib/i18n.svelte.js';
+	import * as consts from '$lib/consts';
 
 	interface Props {
 		action: string;
@@ -20,10 +21,10 @@
 		class="state-selector"
 		id="status"
 		name="status"
-		value={isPublished ? 'published' : 'hided'}
+		value={isPublished ? consts.PostState.Published : consts.PostState.Hided}
 	>
-		<option value="published">{i18n.t('editor.status.published')}</option>
-		<option value="hided">{i18n.t('editor.status.hided')}</option>
+		<option value={consts.PostState.Published}>{i18n.t('editor.status.published')}</option>
+		<option value={consts.PostState.Hided}>{i18n.t('editor.status.hided')}</option>
 	</select>
 	<label for="post">{i18n.t('editor.post')}:</label>
 	<textarea id="post" name="post" rows="40" value={post}></textarea>
