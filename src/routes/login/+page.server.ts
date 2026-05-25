@@ -5,13 +5,17 @@ import { fail, redirect } from '@sveltejs/kit';
 import type { PageServerLoad } from './$types';
 import { saveJwt } from '$lib/utils.js';
 
-interface User {
-	username?: string;
-	password?: string;
+namespace Request {
+	export interface User {
+		username?: string;
+		password?: string;
+	}
 }
 
-interface JWT {
-	token: string;
+namespace Response {
+	export interface User {
+		token: string;
+	}
 }
 
 export const load: PageServerLoad = async ({ locals }) => {
@@ -23,14 +27,14 @@ export const actions = {
 		const data = await request.formData();
 		const username = data.get('username')?.toString();
 
-		const user: User = {
+		const reqUser: Request.User = {
 			username,
 			password: data.get('password')?.toString()
 		};
 
 		try {
-			const jwt: JWT = await api.post('auth/login', user);
-			saveJwt(cookies, jwt.token);
+			const respUser: Response.User = await api.post('auth/login', reqUser);
+			saveJwt(cookies, respUser.token);
 			redirect(303, '/');
 		} catch (e) {
 			if (isHttpError(e)) {
