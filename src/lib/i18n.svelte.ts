@@ -23,6 +23,9 @@ const translations = {
 		append: {
 			title: 'Append'
 		},
+		edit: {
+			title: 'Edit'
+		},
 		editor: {
 			title: 'Title',
 			post: 'Post',
@@ -79,6 +82,9 @@ const translations = {
 		},
 		append: {
 			title: 'Добавить'
+		},
+		edit: {
+			title: 'Редактировать'
 		},
 		editor: {
 			title: 'Заголовок',
