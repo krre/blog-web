@@ -34,6 +34,7 @@ const translations = {
 			sendButton: 'Send'
 		},
 		post: {
+			editButton: 'Edit',
 			deleteButton: 'Delete'
 		},
 		profile: {
@@ -90,6 +91,7 @@ const translations = {
 			sendButton: 'Отправить'
 		},
 		post: {
+			editButton: 'Редактировать',
 			deleteButton: 'Удалить'
 		},
 		profile: {
