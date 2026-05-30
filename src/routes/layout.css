@@ -75,6 +75,7 @@
 body {
 	margin: 0;
 	font-family: var(--font-body);
+	font-size: 0.875rem;
 	color: var(--text-color);
 	background-color: var(--background-color);
 	accent-color: var(--accent-color);
