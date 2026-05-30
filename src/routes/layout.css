@@ -1,11 +1,15 @@
 :root {
 	--font-body: Inter, system-ui, sans-serif;
 
-	--text-color: #0f0d05;
-	--background-color: #fdfcfa;
-	--primary-color: #ebb326;
-	--secondary-color: #b3dd92;
-	--accent-color: #83d272;
+	/*
+	    Color theme:
+	    https://www.realtimecolors.com/?colors=0a0a1b-f7f7fc-4e4bbd-d9d498-7fcb71&fonts=Inter-Inter
+	*/
+	--text-color: #0a0a1b;
+	--background-color: #f7f7fc;
+	--primary-color: #4e4bbd;
+	--secondary-color: #d9d498;
+	--accent-color: #7fcb71;
 }
 
 body {
