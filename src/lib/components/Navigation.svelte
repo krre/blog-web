@@ -30,8 +30,19 @@
 </nav>
 
 <style>
+	nav {
+		font-size: 1rem;
+	}
+
 	a {
 		padding: 0.3em;
+		text-decoration: none;
+		color: var(--text-color-900);
+	}
+
+	a:hover {
+		color: var(--text-color-600);
+		text-decoration: underline;
 	}
 
 	nav {
