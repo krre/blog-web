@@ -1,9 +1,11 @@
 <script lang="ts">
-	import Navigation from '$lib/components/Navigation.svelte';
+	import Header from '$lib/components/Header.svelte';
 	import './layout.css';
 
 	let { children } = $props();
 </script>
 
-<Navigation />
-{@render children()}
+<Header />
+<main>
+	{@render children()}
+</main>

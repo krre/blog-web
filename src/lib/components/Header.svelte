@@ -19,26 +19,33 @@
 	]);
 </script>
 
-<nav>
-	<ul>
-		{#each menuItems as item}
-			{#if item.visible}
-				<li>
-					<a
-						href={item.href}
-						class:active={item.href === '/'
-							? page.url.pathname === '/'
-							: page.url.pathname.startsWith(item.href)}
-					>
-						{item.label}
-					</a>
-				</li>
-			{/if}
-		{/each}
-	</ul>
-</nav>
+<header>
+	<nav>
+		<ul>
+			{#each menuItems as item}
+				{#if item.visible}
+					<li>
+						<a
+							href={item.href}
+							class:active={item.href === '/'
+								? page.url.pathname === '/'
+								: page.url.pathname.startsWith(item.href)}
+						>
+							{item.label}
+						</a>
+					</li>
+				{/if}
+			{/each}
+		</ul>
+	</nav>
+</header>
 
 <style>
+	nav {
+		display: flex;
+		justify-content: center;
+	}
+
 	nav ul {
 		display: flex;
 		font-size: 1rem;
