@@ -41,6 +41,11 @@
 </header>
 
 <style>
+	header {
+		background-color: var(--secondary-color-100);
+		box-shadow: 0 3px 8px 0px rgba(0, 0, 0, 0.2);
+	}
+
 	nav {
 		display: flex;
 		justify-content: center;
@@ -56,7 +61,7 @@
 
 	nav a {
 		text-decoration: none;
-		color: var(--text-color-90);
+		color: var(--secondary-color-900);
 
 		position: relative;
 		padding-bottom: 5px;
@@ -64,7 +69,7 @@
 	}
 
 	nav a:hover {
-		color: var(--text-color-500);
+		color: var(--accent-color-500);
 	}
 
 	nav a.active::after {
@@ -74,6 +79,6 @@
 		bottom: 0;
 		width: 100%;
 		height: 2px;
-		background-color: var(--accent-color);
+		background-color: var(--accent-color-500);
 	}
 </style>
