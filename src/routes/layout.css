@@ -1,7 +1,16 @@
 :root {
 	--font-body: Inter, system-ui, sans-serif;
+
+	--text-color: #0f0d05;
+	--background-color: #fdfcfa;
+	--primary-color: #ebb326;
+	--secondary-color: #b3dd92;
+	--accent-color: #83d272;
 }
 
 body {
 	font-family: var(--font-body);
+	color: var(--text-color);
+	background-color: var(--background-color);
+	accent-color: var(--accent-color);
 }
