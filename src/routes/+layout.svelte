@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Header from '$lib/components/Header.svelte';
+	import { i18n } from '$lib/i18n.svelte';
 	import './layout.css';
 
 	let { children } = $props();
@@ -10,6 +11,8 @@
 	<main>
 		{@render children()}
 	</main>
+
+	<footer><p>© 2026 {i18n.t('main.author')}</p></footer>
 </div>
 
 <style>
@@ -28,5 +31,10 @@
 		max-width: 64rem;
 		margin: 0 auto;
 		box-sizing: border-box;
+	}
+
+	footer {
+		display: flex;
+		justify-content: center;
 	}
 </style>

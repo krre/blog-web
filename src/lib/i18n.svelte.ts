@@ -11,6 +11,7 @@ const translations = {
 		},
 		main: {
 			title: `Vladimir Zarypov's blog`,
+			author: 'Vladimir Zarypov',
 			underConstruction: 'Under construction'
 		},
 		login: {
@@ -71,6 +72,7 @@ const translations = {
 		},
 		main: {
 			title: 'Блог Владимира Зарыпова',
+			author: 'Владимир Зарыпов',
 			underConstruction: 'В процессе разработки'
 		},
 		login: {
