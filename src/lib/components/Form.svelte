@@ -11,7 +11,7 @@
 	let { width, action, success, error, buttonText, children }: Props = $props();
 </script>
 
-<form method="POST" style="max-width: {width ?? 25}em;" {action}>
+<form method="POST" style="max-width: {width ?? 25}rem;" {action}>
 	{@render children()}
 	{#if success}<div class="success">{success}</div>{/if}
 	{#if error}<div class="error">{error}</div>{/if}
@@ -22,8 +22,6 @@
 	form {
 		display: grid;
 		gap: 0.5em;
-		max-width: 300px;
-		margin: auto;
 	}
 
 	form button {
