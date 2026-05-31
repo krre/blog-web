@@ -1,5 +1,8 @@
 :root {
 	--font-body: Inter, system-ui, sans-serif;
+	--page-margin: 0.875rem;
+	--page-padding: 1rem;
+	--border-1px: 1px solid var(--background-color-200);
 
 	/*
 	    Color theme:
