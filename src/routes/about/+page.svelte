@@ -11,13 +11,13 @@
 <Page title={i18n.t('about.title')}>
 	<Rectangle>
 		<div class="grid">
-			<div class="label">{i18n.t('about.name')}:</div>
+			<div>{i18n.t('about.name')}:</div>
 			<div>{fullUserName(data.user.first_name, data.user.last_name)}</div>
-			<div class="label">E-mail:</div>
+			<div>E-mail:</div>
 			<a href="mailto:{data.user.email}">{data.user.email}</a>
-			<div class="label">{i18n.t('profile.location')}:</div>
+			<div>{i18n.t('profile.location')}:</div>
 			<div>{data.user.location}</div>
-			<div class="label">{i18n.t('profile.bio')}:</div>
+			<div>{i18n.t('profile.bio')}:</div>
 			<div>{data.user.bio}</div>
 		</div>
 	</Rectangle>
@@ -28,9 +28,5 @@
 		display: grid;
 		gap: 0.5em;
 		grid-template-columns: max-content auto;
-	}
-
-	.label {
-		color: var(--primary-color-400);
 	}
 </style>
