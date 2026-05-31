@@ -9,8 +9,30 @@
 
 <Page>
 	<Rectangle>
-		{#each data.posts as post}
-			<p><a href="/post/{post.id}">{formatDateTime(post.created_at)} {post.title}</a></p>
-		{/each}
+		<div class="rows">
+			{#each data.posts as post}
+				<div>
+					<div class="date">{formatDateTime(post.created_at)}</div>
+					<h2>
+						<a href="/post/{post.id}">{post.title}</a>
+					</h2>
+				</div>
+			{/each}
+		</div>
 	</Rectangle>
 </Page>
+
+<style>
+	.rows {
+		display: grid;
+		gap: 0.875rem;
+	}
+
+	.date {
+		font-size: 0.875rem;
+	}
+
+	h2 {
+		margin-block-start: 0.25rem;
+	}
+</style>
