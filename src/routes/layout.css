@@ -83,3 +83,11 @@ body {
 	background-color: var(--background-color-50);
 	accent-color: var(--accent-color);
 }
+
+a {
+	color: var(--primary-color);
+}
+
+a:hover {
+	color: var(--primary-color-300);
+}
