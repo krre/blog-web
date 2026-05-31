@@ -13,7 +13,7 @@
 	let { action, title, post, isPublished }: Props = $props();
 </script>
 
-<Form width={60} {action} buttonText={i18n.t('editor.sendButton')}>
+<Form {action} buttonText={i18n.t('editor.sendButton')}>
 	<label for="title">{i18n.t('editor.title')}:</label>
 	<input type="text" id="title" name="title" value={title} required />
 	<label for="status">{i18n.t('editor.status.title')}:</label>
