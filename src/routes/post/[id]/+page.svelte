@@ -26,7 +26,7 @@
 				{data.post.post}
 			</article>
 			{#if data.admin}
-				<div>
+				<div class="button-row">
 					<button onclick={() => goto(`/post/${page.params.id}/edit`)}
 						>{i18n.t('post.editButton')}</button
 					>
@@ -66,6 +66,11 @@
 		white-space: pre-wrap;
 		overflow-wrap: break-word;
 		word-wrap: break-word;
+	}
+
+	.button-row {
+		display: flex;
+		gap: 0.5rem;
 	}
 
 	.delete-form {
