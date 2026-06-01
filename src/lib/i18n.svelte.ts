@@ -93,7 +93,7 @@ const translations = {
 			status: {
 				title: 'Статус',
 				published: 'Опубликовано',
-				hided: 'Спрятано'
+				hided: 'Скрыто'
 			},
 			sendButton: 'Отправить'
 		},
