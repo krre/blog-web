@@ -38,7 +38,8 @@ const translations = {
 		},
 		post: {
 			editButton: 'Edit',
-			deleteButton: 'Delete'
+			deleteButton: 'Delete',
+			deleteDialog: 'Confirm to delete post'
 		},
 		profile: {
 			title: 'Profile',
@@ -98,7 +99,8 @@ const translations = {
 		},
 		post: {
 			editButton: 'Редактировать',
-			deleteButton: 'Удалить'
+			deleteButton: 'Удалить',
+			deleteDialog: 'Подтвердите удаление поста'
 		},
 		profile: {
 			title: 'Профиль',
