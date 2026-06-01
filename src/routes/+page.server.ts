@@ -6,6 +6,7 @@ interface Post {
 	title: string;
 	post: string;
 	created_at: Date;
+	is_published: boolean;
 }
 
 export const load: PageServerLoad = async ({ locals }) => {
