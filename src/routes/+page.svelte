@@ -1,9 +1,9 @@
 <script lang="ts">
 	import Page from '$lib/components/Page.svelte';
 	import Rectangle from '$lib/components/Rectangle.svelte';
+	import HidedPostMark from '$lib/components/HidedPostMark.svelte';
 	import { formatDateTime } from '$lib/utils';
 	import type { PageProps } from './$types';
-	import { i18n } from '$lib/i18n.svelte';
 
 	let { data }: PageProps = $props();
 </script>
@@ -16,7 +16,7 @@
 					<div class="date">
 						{formatDateTime(post.created_at)}
 						{#if data.admin && !post.is_published}
-							<span class="hided">[{i18n.t('post.status.hided')}]</span>
+							<HidedPostMark />
 						{/if}
 					</div>
 					<h2>
@@ -32,10 +32,6 @@
 	.rows {
 		display: grid;
 		gap: 0.875rem;
-	}
-
-	.hided {
-		color: var(--secondary-color-600);
 	}
 
 	.date {

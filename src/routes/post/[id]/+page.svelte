@@ -1,6 +1,7 @@
 <script lang="ts">
 	import Page from '$lib/components/Page.svelte';
 	import Rectangle from '$lib/components/Rectangle.svelte';
+	import HidedPostMark from '$lib/components/HidedPostMark.svelte';
 	import type { PageProps } from './$types';
 	import { i18n } from '$lib/i18n.svelte';
 	import { enhance } from '$app/forms';
@@ -18,6 +19,9 @@
 			<div class="date">
 				{formatDateTime(data.post.created_at)}
 			</div>
+			{#if !data.post.is_published}
+				<HidedPostMark />
+			{/if}
 			<article class="post">
 				{data.post.post}
 			</article>
