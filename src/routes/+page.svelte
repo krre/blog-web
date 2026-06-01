@@ -16,7 +16,7 @@
 					<div class="date">
 						{formatDateTime(post.created_at)}
 						{#if data.admin && !post.is_published}
-							<span class="hided">[{i18n.t('editor.status.hided')}]</span>
+							<span class="hided">[{i18n.t('post.status.hided')}]</span>
 						{/if}
 					</div>
 					<h2>

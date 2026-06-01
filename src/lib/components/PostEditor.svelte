@@ -16,15 +16,15 @@
 <Form {action} buttonText={i18n.t('editor.sendButton')}>
 	<label for="title">{i18n.t('editor.title')}:</label>
 	<input type="text" id="title" name="title" value={title} required />
-	<label for="status">{i18n.t('editor.status.title')}:</label>
+	<label for="status">{i18n.t('post.status.title')}:</label>
 	<select
 		class="state-selector"
 		id="status"
 		name="status"
 		value={isPublished ? consts.PostState.Published : consts.PostState.Hided}
 	>
-		<option value={consts.PostState.Published}>{i18n.t('editor.status.published')}</option>
-		<option value={consts.PostState.Hided}>{i18n.t('editor.status.hided')}</option>
+		<option value={consts.PostState.Published}>{i18n.t('post.status.published')}</option>
+		<option value={consts.PostState.Hided}>{i18n.t('post.status.hided')}</option>
 	</select>
 	<label for="post">{i18n.t('editor.post')}:</label>
 	<textarea id="post" name="post" rows="40" value={post}></textarea>

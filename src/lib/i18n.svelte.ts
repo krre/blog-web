@@ -29,14 +29,14 @@ const translations = {
 		editor: {
 			title: 'Title',
 			post: 'Post',
+			sendButton: 'Send'
+		},
+		post: {
 			status: {
 				title: 'Status',
 				published: 'Published',
 				hided: 'Hided'
 			},
-			sendButton: 'Send'
-		},
-		post: {
 			editButton: 'Edit',
 			deleteButton: 'Delete',
 			deleteDialog: 'Confirm to delete post'
@@ -90,14 +90,14 @@ const translations = {
 		editor: {
 			title: 'Заголовок',
 			post: 'Пост',
+			sendButton: 'Отправить'
+		},
+		post: {
 			status: {
 				title: 'Статус',
 				published: 'Опубликовано',
 				hided: 'Скрыто'
 			},
-			sendButton: 'Отправить'
-		},
-		post: {
 			editButton: 'Редактировать',
 			deleteButton: 'Удалить',
 			deleteDialog: 'Подтвердите удаление поста'
