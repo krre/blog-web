@@ -25,22 +25,24 @@
 			<article class="post">
 				{data.post.post}
 			</article>
-			<div>
-				<button onclick={() => goto(`/post/${page.params.id}/edit`)}
-					>{i18n.t('post.editButton')}</button
-				>
-				<form
-					class="delete-form"
-					method="POST"
-					action="?/delete"
-					use:enhance={({ cancel }) => {
-						const confirmed = confirm(i18n.t('post.deleteDialog'));
-						if (!confirmed) cancel();
-					}}
-				>
-					<button>{i18n.t('post.deleteButton')}</button>
-				</form>
-			</div>
+			{#if data.admin}
+				<div>
+					<button onclick={() => goto(`/post/${page.params.id}/edit`)}
+						>{i18n.t('post.editButton')}</button
+					>
+					<form
+						class="delete-form"
+						method="POST"
+						action="?/delete"
+						use:enhance={({ cancel }) => {
+							const confirmed = confirm(i18n.t('post.deleteDialog'));
+							if (!confirmed) cancel();
+						}}
+					>
+						<button>{i18n.t('post.deleteButton')}</button>
+					</form>
+				</div>
+			{/if}
 		</div>
 	</Rectangle>
 </Page>
