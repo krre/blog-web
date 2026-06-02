@@ -1,5 +1,4 @@
 import * as api from '$lib/api';
-import * as consts from '$lib/consts';
 import { error } from '@sveltejs/kit';
 import type { PageServerLoad } from './$types';
 
@@ -7,7 +6,6 @@ namespace Request {
 	export interface Post {
 		title?: string;
 		post?: string;
-		is_published: boolean;
 	}
 }
 
@@ -33,8 +31,7 @@ export const actions = {
 
 		const post: Request.Post = {
 			title: data.get('title')?.toString(),
-			post: data.get('post')?.toString(),
-			is_published: data.get('status')?.toString() == consts.PostState.Published
+			post: data.get('post')?.toString()
 		};
 
 		await api.put(`posts/${params.id}`, post);
