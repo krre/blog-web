@@ -16,7 +16,7 @@
 		<h2>{data.post.title}</h2>
 		<div class="container">
 			<div class="date">
-				{formatDateTime(data.post.created_at)}
+				{formatDateTime(data.post.published_at ?? data.post.created_at)}
 			</div>
 			<article class="post">
 				{data.post.post}
