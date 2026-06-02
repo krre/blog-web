@@ -16,7 +16,7 @@ namespace Response {
 		id: number;
 		title: string;
 		post: string;
-		is_published: boolean;
+		published_at?: Date;
 	}
 }
 

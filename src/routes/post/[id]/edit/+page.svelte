@@ -21,7 +21,7 @@
 			action="?/edit"
 			title={data.post.title}
 			post={data.post.post}
-			isPublished={data.post.is_published}
+			isPublished={data.post.published_at ? true : false}
 		/>
 	</Rectangle>
 </Page>

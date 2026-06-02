@@ -6,8 +6,9 @@ interface Post {
 	id: number;
 	title: string;
 	post: string;
-	is_published: boolean;
 	created_at: Date;
+	updated_at: Date;
+	published_at?: Date;
 }
 
 export const load: PageServerLoad = async ({ params }) => {

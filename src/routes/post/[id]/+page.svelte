@@ -19,7 +19,7 @@
 			<div class="date">
 				{formatDateTime(data.post.created_at)}
 			</div>
-			{#if !data.post.is_published}
+			{#if !data.post.published_at}
 				<HidedPostMark />
 			{/if}
 			<article class="post">
