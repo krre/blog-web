@@ -1,13 +1,13 @@
 import * as api from '$lib/api';
 import type { PageServerLoad } from './$types';
 
-interface Post {
+interface Draft {
 	id: number;
 	title: string;
-	published_at: Date;
+	created_at: Date;
 }
 
 export const load: PageServerLoad = async () => {
-	const posts: Post[] = await api.get('posts');
+	const posts: Draft[] = await api.get('drafts');
 	return { posts };
 };

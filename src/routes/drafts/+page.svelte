@@ -13,7 +13,7 @@
 			{#each data.posts as post}
 				<div>
 					<div class="date">
-						{formatDateTime(post.published_at)}
+						{formatDateTime(post.created_at)}
 					</div>
 					<h2>
 						<a href="/post/{post.id}">{post.title}</a>

@@ -5,6 +5,7 @@ const translations = {
 		nav: {
 			blog: 'Blog',
 			append: 'Append',
+			drafts: 'Drafts',
 			profile: 'Profile',
 			about: 'About',
 			logout: 'Logout'
@@ -66,6 +67,7 @@ const translations = {
 		nav: {
 			blog: 'Блог',
 			append: 'Добавить',
+			drafts: 'Черновики',
 			profile: 'Профиль',
 			about: 'Об авторе',
 			logout: 'Выйти'
