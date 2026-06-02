@@ -38,6 +38,8 @@ const translations = {
 				published: 'Published',
 				hided: 'Hided'
 			},
+			publishButton: 'Publish',
+			hideButton: 'Hide',
 			editButton: 'Edit',
 			deleteButton: 'Delete',
 			deleteDialog: 'Confirm to delete post'
@@ -100,6 +102,8 @@ const translations = {
 				published: 'Опубликовано',
 				hided: 'Скрыто'
 			},
+			publishButton: 'Опубликовать',
+			hideButton: 'Спрятать',
 			editButton: 'Редактировать',
 			deleteButton: 'Удалить',
 			deleteDialog: 'Подтвердите удаление поста'

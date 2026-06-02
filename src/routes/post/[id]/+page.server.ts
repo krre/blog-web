@@ -17,6 +17,20 @@ export const load: PageServerLoad = async ({ params }) => {
 };
 
 export const actions = {
+	publish: async ({ locals, params }) => {
+		if (!locals.user) error(401);
+
+		await api.patch(`posts/${params.id}/publish`);
+		redirect(307, '/');
+	},
+
+	hide: async ({ locals, params }) => {
+		if (!locals.user) error(401);
+
+		await api.patch(`posts/${params.id}/hide`);
+		redirect(307, '/');
+	},
+
 	delete: async ({ locals, params }) => {
 		if (!locals.user) error(401);
 

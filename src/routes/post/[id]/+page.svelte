@@ -26,11 +26,20 @@
 			</article>
 			{#if data.admin}
 				<div class="button-row">
+					{#if data.post.published_at}
+						<form method="POST" action="?/hide" use:enhance>
+							<button>{i18n.t('post.hideButton')}</button>
+						</form>
+					{:else}
+						<form method="POST" action="?/publish" use:enhance>
+							<button>{i18n.t('post.publishButton')}</button>
+						</form>
+					{/if}
+
 					<button onclick={() => goto(`/post/${page.params.id}/edit`)}
 						>{i18n.t('post.editButton')}</button
 					>
 					<form
-						class="delete-form"
 						method="POST"
 						action="?/delete"
 						use:enhance={({ cancel }) => {
@@ -74,9 +83,5 @@
 	.button-row {
 		display: flex;
 		gap: 0.5rem;
-	}
-
-	.delete-form {
-		display: inline;
 	}
 </style>
