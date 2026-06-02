@@ -17,11 +17,6 @@
 
 <Page title={i18n.t('edit.title')}>
 	<Rectangle>
-		<PostEditor
-			action="?/edit"
-			title={data.post.title}
-			post={data.post.post}
-			isPublished={data.post.published_at ? true : false}
-		/>
+		<PostEditor action="?/edit" title={data.post.title} post={data.post.post} />
 	</Rectangle>
 </Page>

@@ -18,9 +18,6 @@
 			<div class="date">
 				{formatDateTime(data.post.created_at)}
 			</div>
-			{#if !data.post.published_at}
-				<span class="hided">[{i18n.t('post.status.hided')}]</span>
-			{/if}
 			<article class="post">
 				{data.post.post}
 			</article>
@@ -68,10 +65,6 @@
 
 	.date {
 		opacity: 0.6;
-	}
-
-	.hided {
-		color: var(--secondary-color-600);
 	}
 
 	.post {

@@ -33,11 +33,6 @@ const translations = {
 			sendButton: 'Send'
 		},
 		post: {
-			status: {
-				title: 'Status',
-				published: 'Published',
-				hided: 'Hided'
-			},
 			publishButton: 'Publish',
 			hideButton: 'Hide',
 			editButton: 'Edit',
@@ -97,11 +92,6 @@ const translations = {
 			sendButton: 'Отправить'
 		},
 		post: {
-			status: {
-				title: 'Статус',
-				published: 'Опубликовано',
-				hided: 'Скрыто'
-			},
 			publishButton: 'Опубликовать',
 			hideButton: 'Спрятать',
 			editButton: 'Редактировать',
