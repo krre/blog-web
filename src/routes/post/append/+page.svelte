@@ -17,6 +17,6 @@
 
 <Page title={i18n.t('append.title')}>
 	<Rectangle>
-		<PostEditor action="?/append" title="" post="" isPublished={false} />
+		<PostEditor action="?/append" title="" post="" />
 	</Rectangle>
 </Page>
