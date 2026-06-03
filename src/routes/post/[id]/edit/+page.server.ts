@@ -18,7 +18,9 @@ namespace Response {
 	}
 }
 
-export const load: PageServerLoad = async ({ params }) => {
+export const load: PageServerLoad = async ({ params, locals }) => {
+	if (!locals.user) return error(401);
+
 	let post: Response.Post = await api.get(`posts/${params.id}`);
 	return { post };
 };
