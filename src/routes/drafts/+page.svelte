@@ -3,11 +3,12 @@
 	import Rectangle from '$lib/components/Rectangle.svelte';
 	import { formatDateTime } from '$lib/utils';
 	import type { PageProps } from './$types';
+	import { i18n } from '$lib/i18n.svelte';
 
 	let { data }: PageProps = $props();
 </script>
 
-<Page>
+<Page title={i18n.t('nav.drafts')}>
 	<Rectangle>
 		<div class="rows">
 			{#each data.posts as post}
