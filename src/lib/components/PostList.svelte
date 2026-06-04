@@ -42,4 +42,12 @@
 	h2 {
 		margin-block-start: 0.25rem;
 	}
+
+	a {
+		text-decoration: none;
+	}
+
+	a:hover {
+		text-decoration: underline;
+	}
 </style>
