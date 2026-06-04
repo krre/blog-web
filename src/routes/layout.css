@@ -80,14 +80,14 @@ body {
 	font-family: var(--font-body);
 	font-size: 0.875rem;
 	color: var(--text-color);
-	background-color: var(--background-color-50);
+	background-color: var(--background-color);
 	accent-color: var(--accent-color);
 }
 
 a {
-	color: var(--primary-color);
+	color: var(--accent-color);
 }
 
 a:hover {
-	color: var(--primary-color-300);
+	color: var(--accent-color-300);
 }
