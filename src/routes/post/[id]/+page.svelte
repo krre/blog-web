@@ -40,16 +40,16 @@
 			<div class="button-row">
 				{#if data.post.published_at}
 					<form method="POST" action="?/hide" use:enhance>
-						<button>{i18n.t('post.hideButton')}</button>
+						<button>{i18n.t('post.button.hide')}</button>
 					</form>
 				{:else}
 					<form method="POST" action="?/publish" use:enhance>
-						<button>{i18n.t('post.publishButton')}</button>
+						<button>{i18n.t('post.button.publish')}</button>
 					</form>
 				{/if}
 
 				<button onclick={() => goto(`/post/${page.params.id}/edit`)}
-					>{i18n.t('post.editButton')}</button
+					>{i18n.t('post.button.edit')}</button
 				>
 				<form
 					method="POST"
@@ -59,7 +59,7 @@
 						if (!confirmed) cancel();
 					}}
 				>
-					<button>{i18n.t('post.deleteButton')}</button>
+					<button>{i18n.t('post.button.delete')}</button>
 				</form>
 			</div>
 		{/if}

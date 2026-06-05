@@ -38,10 +38,12 @@ const translations = {
 				updated: 'Updated',
 				published: 'Published'
 			},
-			publishButton: 'Publish',
-			hideButton: 'Hide',
-			editButton: 'Edit',
-			deleteButton: 'Delete',
+			button: {
+				publish: 'Publish',
+				hide: 'Hide',
+				edit: 'Edit',
+				delete: 'Delete'
+			},
 			deleteDialog: 'Confirm to delete post'
 		},
 		profile: {
@@ -102,10 +104,12 @@ const translations = {
 				updated: 'Изменено',
 				published: 'Опубликовано'
 			},
-			publishButton: 'Опубликовать',
-			hideButton: 'Спрятать',
-			editButton: 'Редактировать',
-			deleteButton: 'Удалить',
+			button: {
+				publish: 'Опубликовать',
+				hide: 'Спрятать',
+				edit: 'Редактировать',
+				delete: 'Удалить'
+			},
 			deleteDialog: 'Подтвердите удаление поста'
 		},
 		profile: {
