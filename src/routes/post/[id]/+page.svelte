@@ -6,12 +6,13 @@
 	import { goto } from '$app/navigation';
 	import { page } from '$app/state';
 	import { formatDateTime } from '$lib/utils';
+	import { marked } from 'marked';
 
 	let { data }: PageProps = $props();
 </script>
 
 <Page title={data.post.title}>
-	<h2>{data.post.title}</h2>
+	<h1>{data.post.title}</h1>
 	<div class="container">
 		<div class="date">
 			{#if data.admin}
@@ -34,7 +35,7 @@
 			{/if}
 		</div>
 		<article class="post">
-			{data.post.post}
+			{@html marked.parse(data.post.post)}
 		</article>
 		{#if data.admin}
 			<div class="button-row">
@@ -67,7 +68,7 @@
 </Page>
 
 <style>
-	h2 {
+	h1 {
 		margin-block-start: 0;
 	}
 
