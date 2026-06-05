@@ -43,8 +43,7 @@
 
 <style>
 	header {
-		background-color: var(--secondary-color-100);
-		box-shadow: 0 3px 8px 0px rgba(0, 0, 0, 0.2);
+		background-color: var(--secondary-color-50);
 		margin-bottom: 1rem;
 	}
 
