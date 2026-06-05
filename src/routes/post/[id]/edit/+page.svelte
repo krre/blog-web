@@ -1,6 +1,5 @@
 <script lang="ts">
 	import Page from '$lib/components/Page.svelte';
-	import Rectangle from '$lib/components/Rectangle.svelte';
 	import PostEditor from '$lib/components/PostEditor.svelte';
 	import { i18n } from '$lib/i18n.svelte.js';
 	import type { PageProps } from './$types';
@@ -16,7 +15,5 @@
 </script>
 
 <Page title={i18n.t('edit.title')}>
-	<Rectangle>
-		<PostEditor action="?/edit" title={data.post.title} post={data.post.post} />
-	</Rectangle>
+	<PostEditor action="?/edit" title={data.post.title} post={data.post.post} />
 </Page>

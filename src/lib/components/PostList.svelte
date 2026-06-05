@@ -1,6 +1,5 @@
 <script lang="ts">
 	import Page from '$lib/components/Page.svelte';
-	import Rectangle from '$lib/components/Rectangle.svelte';
 	import { formatDateTime } from '$lib/utils';
 	import { type Post } from '$lib/types';
 
@@ -13,20 +12,18 @@
 </script>
 
 <Page {title}>
-	<Rectangle>
-		<div class="rows">
-			{#each posts as post}
-				<div>
-					<div class="date">
-						{formatDateTime(post.posted_at)}
-					</div>
-					<h2>
-						<a href="/post/{post.id}">{post.title}</a>
-					</h2>
+	<div class="rows">
+		{#each posts as post}
+			<div>
+				<div class="date">
+					{formatDateTime(post.posted_at)}
 				</div>
-			{/each}
-		</div>
-	</Rectangle>
+				<h2>
+					<a href="/post/{post.id}">{post.title}</a>
+				</h2>
+			</div>
+		{/each}
+	</div>
 </Page>
 
 <style>
