@@ -91,3 +91,9 @@ a {
 a:hover {
 	color: var(--accent-color-300);
 }
+
+.form-grid {
+	display: grid;
+	gap: 0.5em;
+	grid-template-columns: max-content auto;
+}

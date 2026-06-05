@@ -33,6 +33,11 @@ const translations = {
 			sendButton: 'Send'
 		},
 		post: {
+			date: {
+				created: 'Created',
+				updated: 'Updated',
+				published: 'Published'
+			},
 			publishButton: 'Publish',
 			hideButton: 'Hide',
 			editButton: 'Edit',
@@ -92,6 +97,11 @@ const translations = {
 			sendButton: 'Отправить'
 		},
 		post: {
+			date: {
+				created: 'Создано',
+				updated: 'Изменено',
+				published: 'Опубликовано'
+			},
 			publishButton: 'Опубликовать',
 			hideButton: 'Спрятать',
 			editButton: 'Редактировать',

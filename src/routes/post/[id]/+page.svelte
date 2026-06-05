@@ -14,7 +14,24 @@
 	<h2>{data.post.title}</h2>
 	<div class="container">
 		<div class="date">
-			{formatDateTime(data.post.published_at ?? data.post.created_at)}
+			{#if data.admin}
+				<div class="form-grid">
+					<div>{i18n.t('post.date.created')}:</div>
+					<div>
+						{formatDateTime(data.post.created_at)}
+					</div>
+					<div>{i18n.t('post.date.updated')}:</div>
+					<div>
+						{formatDateTime(data.post.updated_at)}
+					</div>
+					<div>{i18n.t('post.date.published')}:</div>
+					<div>
+						{data.post.published_at ? formatDateTime(data.post.published_at) : ''}
+					</div>
+				</div>
+			{:else}
+				{formatDateTime(data.post.published_at ?? data.post.created_at)}
+			{/if}
 		</div>
 		<article class="post">
 			{data.post.post}

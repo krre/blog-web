@@ -8,7 +8,7 @@
 </script>
 
 <Page title={i18n.t('about.title')}>
-	<div class="grid">
+	<div class="form-grid">
 		<div>{i18n.t('about.name')}:</div>
 		<div>{fullUserName(data.user.first_name, data.user.last_name)}</div>
 		<div>E-mail:</div>
@@ -19,11 +19,3 @@
 		<div>{data.user.bio}</div>
 	</div>
 </Page>
-
-<style>
-	.grid {
-		display: grid;
-		gap: 0.5em;
-		grid-template-columns: max-content auto;
-	}
-</style>
