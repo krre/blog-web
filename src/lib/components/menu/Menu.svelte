@@ -2,6 +2,12 @@
 	import { i18n } from '$lib/i18n.svelte';
 	import { page } from '$app/state';
 
+	interface Props {
+		vertical?: boolean;
+		onclick?: () => void;
+	}
+
+	let { vertical = false, onclick }: Props = $props();
 	const isAdmin = page.data.admin ? true : false;
 
 	interface MenuItem {
@@ -20,7 +26,7 @@
 	]);
 </script>
 
-<nav>
+<nav class:vertical>
 	<ul>
 		{#each menuItems as item}
 			{#if item.visible}
@@ -30,6 +36,7 @@
 						class:active={item.href === '/'
 							? page.url.pathname === '/'
 							: page.url.pathname.startsWith(item.href)}
+						{onclick}
 					>
 						{item.label}
 					</a>
@@ -51,6 +58,16 @@
 		list-style: none;
 		gap: 0.875rem;
 		padding: 0;
+	}
+
+	nav.vertical {
+		justify-content: flex-start;
+	}
+
+	nav.vertical ul {
+		flex-direction: column;
+		width: 100%;
+		gap: 1.25rem;
 	}
 
 	nav a {

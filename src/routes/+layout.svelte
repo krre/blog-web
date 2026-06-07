@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Header from '$lib/components/Header.svelte';
+	import Drawer from '$lib/components/menu/Drawer.svelte';
 	import { i18n } from '$lib/i18n.svelte';
 	import './layout.css';
 
@@ -9,6 +10,7 @@
 
 <div class="app">
 	<Header bind:isMenuOpen />
+	<Drawer bind:isOpen={isMenuOpen} />
 	<main>
 		{@render children()}
 	</main>

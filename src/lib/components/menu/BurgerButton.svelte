@@ -25,7 +25,6 @@
 
 {#if isOpen}
 	<div
-		class="overlay"
 		role="button"
 		tabindex="0"
 		onclick={close}
@@ -70,16 +69,5 @@
 
 	.burger.open .line:nth-child(3) {
 		transform: translateY(-8px) rotate(-45deg);
-	}
-
-	.overlay {
-		position: fixed;
-		top: 0;
-		left: 0;
-		width: 100vw;
-		height: 100vh;
-		background: rgba(0, 0, 0, 0.4);
-		backdrop-filter: blur(2px);
-		z-index: 8;
 	}
 </style>

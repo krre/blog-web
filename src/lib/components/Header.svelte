@@ -7,7 +7,7 @@
 
 <header>
 	<div class="burger-button">
-		<BurgerButton isOpen={isMenuOpen} />
+		<BurgerButton bind:isOpen={isMenuOpen} />
 	</div>
 	<div class="menu">
 		<Menu />
