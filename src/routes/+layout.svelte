@@ -4,10 +4,11 @@
 	import './layout.css';
 
 	let { children } = $props();
+	let isMenuOpen = $state(false);
 </script>
 
 <div class="app">
-	<Header />
+	<Header bind:isMenuOpen />
 	<main>
 		{@render children()}
 	</main>
@@ -29,6 +30,7 @@
 		width: 100%;
 		max-width: 64rem;
 		margin: 0 auto;
+		padding: 0 1rem;
 		box-sizing: border-box;
 	}
 

@@ -10,6 +10,9 @@ const translations = {
 			about: 'About',
 			logout: 'Logout'
 		},
+		burger: {
+			button: 'Open menu'
+		},
 		main: {
 			title: `Vladimir Zarypov's blog`,
 			author: 'Vladimir Zarypov'
@@ -75,6 +78,9 @@ const translations = {
 			profile: 'Профиль',
 			about: 'Об авторе',
 			logout: 'Выйти'
+		},
+		burger: {
+			button: 'Открыть меню'
 		},
 		main: {
 			title: 'Блог Владимира Зарыпова',
