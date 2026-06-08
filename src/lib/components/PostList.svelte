@@ -1,7 +1,10 @@
 <script lang="ts">
+	import * as consts from '$lib/consts';
 	import Page from '$lib/components/Page.svelte';
+	import Pagination from '$lib/components/Pagination.svelte';
 	import { formatDateTime } from '$lib/utils';
 	import { type Post } from '$lib/types';
+	import { goto } from '$app/navigation';
 
 	interface Props {
 		title?: string;
@@ -9,6 +12,12 @@
 	}
 
 	let { title, posts }: Props = $props();
+	let current = $state(1);
+	let count = $state(11);
+
+	$effect(() => {
+		goto(current > 1 ? `/?page=${current}` : '/');
+	});
 </script>
 
 <Page {title}>
@@ -24,6 +33,7 @@
 			</div>
 		{/each}
 	</div>
+	<Pagination {count} limit={consts.Main.PageLimit} bind:current />
 </Page>
 
 <style>
