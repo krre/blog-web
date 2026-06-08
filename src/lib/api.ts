@@ -54,9 +54,24 @@ async function send<Request, Response>(
 		headers['authorization'] = `bearer ${jwt}`;
 	}
 
-	const response = await fetch(`${API_SERVER_URL}/${endpoint}`, {
+	let url = new URL(`${API_SERVER_URL}/${endpoint}`);
+	let body = undefined;
+
+	if (params) {
+		if (method == 'GET') {
+			Object.entries(params).forEach(([key, value]) => {
+				if (value !== undefined) {
+					url.searchParams.append(key, String(value));
+				}
+			});
+		} else {
+			body = JSON.stringify(params);
+		}
+	}
+
+	const response = await fetch(url, {
 		method,
-		body: params ? JSON.stringify(params) : undefined,
+		body,
 		headers
 	});
 
