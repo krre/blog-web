@@ -1,3 +1,3 @@
-export namespace Main {
-	export const PageLimit = 10;
+export namespace Post {
+	export const PageLimit = 20;
 }

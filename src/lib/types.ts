@@ -8,3 +8,8 @@ export interface Post {
 	title: string;
 	posted_at: Date;
 }
+
+export interface Posts {
+	posts: Post[];
+	count: number;
+}

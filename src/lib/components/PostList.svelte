@@ -3,17 +3,16 @@
 	import Page from '$lib/components/Page.svelte';
 	import Pagination from '$lib/components/Pagination.svelte';
 	import { formatDateTime } from '$lib/utils';
-	import { type Post } from '$lib/types';
+	import { type Posts } from '$lib/types';
 	import { goto } from '$app/navigation';
 
 	interface Props {
 		title?: string;
-		posts: Post[];
+		posts: Posts;
 	}
 
 	let { title, posts }: Props = $props();
 	let current = $state(1);
-	let count = $state(11);
 
 	$effect(() => {
 		goto(current > 1 ? `/?page=${current}` : '/');
@@ -22,7 +21,7 @@
 
 <Page {title}>
 	<div class="rows">
-		{#each posts as post}
+		{#each posts.posts as post}
 			<div>
 				<div class="date">
 					{formatDateTime(post.posted_at)}
@@ -33,7 +32,7 @@
 			</div>
 		{/each}
 	</div>
-	<Pagination {count} limit={consts.Main.PageLimit} bind:current />
+	<Pagination count={posts.count} limit={consts.Post.PageLimit} bind:current />
 </Page>
 
 <style>
