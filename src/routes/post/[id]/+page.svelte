@@ -35,7 +35,11 @@
 			{/if}
 		</div>
 		<article class="post">
-			{@html marked.parse(data.post.post)}
+			{#if data.post.post}
+				{@html marked.parse(data.post.post)}
+			{:else}
+				<p></p>
+			{/if}
 		</article>
 		{#if data.admin}
 			<div class="button-row">
@@ -75,7 +79,6 @@
 	.container {
 		display: flex;
 		flex-direction: column;
-		gap: 1rem;
 	}
 
 	.date {
@@ -83,7 +86,6 @@
 	}
 
 	.post {
-		white-space: pre-wrap;
 		overflow-wrap: break-word;
 		word-wrap: break-word;
 	}
