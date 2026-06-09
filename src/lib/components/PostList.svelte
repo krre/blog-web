@@ -4,19 +4,14 @@
 	import Pagination from '$lib/components/Pagination.svelte';
 	import { formatDateTime } from '$lib/utils';
 	import { type Posts } from '$lib/types';
-	import { goto } from '$app/navigation';
 
 	interface Props {
 		title?: string;
 		posts: Posts;
+		current: number;
 	}
 
-	let { title, posts }: Props = $props();
-	let current = $state(1);
-
-	$effect(() => {
-		goto(current > 1 ? `/?page=${current}` : '/');
-	});
+	let { title, posts, current = $bindable(1) }: Props = $props();
 </script>
 
 <Page {title}>
