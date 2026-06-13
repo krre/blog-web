@@ -60,7 +60,7 @@
 	}
 
 	button:hover {
-		background-color: var(--secondary-color-200);
+		background-color: var(--secondary-color-50);
 	}
 
 	button:last-child {
@@ -68,6 +68,6 @@
 	}
 
 	.offset {
-		background-color: var(--secondary-color-100);
+		background-color: var(--accent-color-50);
 	}
 </style>
