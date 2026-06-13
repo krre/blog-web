@@ -13,6 +13,8 @@
 		<div>{fullUserName(data.user.first_name, data.user.last_name)}</div>
 		<div>E-mail:</div>
 		<a href="mailto:{data.user.email}">{data.user.email}</a>
+		<div>Telegram:</div>
+		<a href={data.user.telegram}>{data.user.telegram}</a>
 		<div>{i18n.t('profile.location')}:</div>
 		<div>{data.user.location}</div>
 		<div>{i18n.t('profile.bio')}:</div>

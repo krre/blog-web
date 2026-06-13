@@ -28,6 +28,8 @@
 			<input type="text" id="last-name" name="last_name" value={data.profile.last_name} />
 			<label for="email">E-mail:</label>
 			<input type="email" id="email" name="email" value={data.profile.email} />
+			<label for="telegram">Telegram:</label>
+			<input type="url" id="telegram" name="telegram" value={data.profile.telegram} />
 			<label for="location">{i18n.t('profile.location')}:</label>
 			<input type="text" id="location" name="location" value={data.profile.location} />
 			<label for="bio">{i18n.t('profile.bio')}:</label>

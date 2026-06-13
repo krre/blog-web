@@ -9,6 +9,7 @@ interface Profile {
 	first_name?: string;
 	last_name?: string;
 	email?: string;
+	telegram?: string;
 	location?: string;
 	bio?: string;
 }
@@ -36,6 +37,7 @@ export const actions = {
 			first_name: data.get('first_name')?.toString(),
 			last_name: data.get('last_name')?.toString(),
 			email: data.get('email')?.toString(),
+			telegram: data.get('telegram')?.toString(),
 			location: data.get('location')?.toString(),
 			bio: data.get('bio')?.toString()
 		};
