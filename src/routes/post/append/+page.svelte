@@ -9,7 +9,7 @@
 
 	$effect(() => {
 		if (form?.id) {
-			goto(`/post/${form.id}`);
+			goto(`/post/${form.id}?draft=1`);
 		}
 	});
 </script>
