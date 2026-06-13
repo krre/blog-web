@@ -9,11 +9,15 @@
 
 	$effect(() => {
 		if (form?.success) {
-			goto(`/post/${data.post.id}`);
+			goto(`/post/${data.post.id}${data.post.published_at ? '' : '?draft=1'}`);
 		}
 	});
 </script>
 
 <Page title={i18n.t('edit.title')}>
-	<PostEditor action="?/edit" title={data.post.title} post={data.post.post} />
+	<PostEditor
+		action="?/edit{data.post.published_at ? '' : '&draft=1'}"
+		title={data.post.title}
+		post={data.post.post}
+	/>
 </Page>

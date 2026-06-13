@@ -53,7 +53,9 @@
 					</form>
 				{/if}
 
-				<button onclick={() => goto(`/post/${page.params.id}/edit`)}
+				<button
+					onclick={() =>
+						goto(`/post/${page.params.id}/edit${data.post.published_at ? '' : '?draft=1'}`)}
 					>{i18n.t('post.button.edit')}</button
 				>
 				<form

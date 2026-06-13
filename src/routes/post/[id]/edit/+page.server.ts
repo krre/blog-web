@@ -18,15 +18,17 @@ namespace Response {
 	}
 }
 
-export const load: PageServerLoad = async ({ params, locals }) => {
+export const load: PageServerLoad = async ({ params, locals, url }) => {
 	if (!locals.user) return error(401);
 
-	let post: Response.Post = await api.get(`posts/${params.id}`);
+	const draft = url.searchParams.get('draft');
+	const endpoint = draft ? 'drafts' : 'posts';
+	let post: Response.Post = await api.get(`${endpoint}/${params.id}`);
 	return { post };
 };
 
 export const actions = {
-	edit: async ({ locals, params, request }) => {
+	edit: async ({ locals, params, request, url }) => {
 		if (!locals.user) error(401);
 
 		const data = await request.formData();

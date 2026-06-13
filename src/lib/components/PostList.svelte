@@ -9,9 +9,10 @@
 		title?: string;
 		posts: Posts;
 		current: number;
+		isPublished: boolean;
 	}
 
-	let { title, posts, current = $bindable(1) }: Props = $props();
+	let { title, posts, current = $bindable(1), isPublished }: Props = $props();
 </script>
 
 <Page {title}>
@@ -22,7 +23,7 @@
 					{formatDateTime(post.posted_at)}
 				</div>
 				<h2>
-					<a href="/post/{post.id}">{post.title}</a>
+					<a href="/post/{post.id}{isPublished ? '' : '?draft=1'}">{post.title}</a>
 				</h2>
 			</div>
 		{/each}

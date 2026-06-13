@@ -11,8 +11,11 @@ interface Post {
 	published_at?: Date;
 }
 
-export const load: PageServerLoad = async ({ params }) => {
-	let post: Post = await api.get(`posts/${params.id}`);
+export const load: PageServerLoad = async ({ params, url }) => {
+	const draft = url.searchParams.get('draft');
+	const endpoint = draft ? 'drafts' : 'posts';
+
+	let post: Post = await api.get(`${endpoint}/${params.id}`);
 	return { post };
 };
 

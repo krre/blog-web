@@ -11,4 +11,4 @@
 	});
 </script>
 
-<PostList posts={data.posts} bind:current />
+<PostList posts={data.posts} bind:current isPublished={true} />

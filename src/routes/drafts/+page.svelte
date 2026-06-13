@@ -13,4 +13,4 @@
 	});
 </script>
 
-<PostList title={i18n.t('nav.drafts')} posts={data.posts} bind:current />
+<PostList title={i18n.t('nav.drafts')} posts={data.posts} bind:current isPublished={false} />
