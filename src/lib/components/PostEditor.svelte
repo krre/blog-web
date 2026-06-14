@@ -15,5 +15,5 @@
 	<label for="title">{i18n.t('editor.title')}:</label>
 	<input type="text" id="title" name="title" value={title} required />
 	<label for="post">{i18n.t('editor.post')}:</label>
-	<textarea id="post" name="post" rows="40" value={post}></textarea>
+	<textarea id="post" name="post" rows="40" spellcheck="true" value={post}></textarea>
 </Form>
