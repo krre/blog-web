@@ -6,6 +6,7 @@ const translations = {
 			blog: 'Blog',
 			append: 'Append',
 			drafts: 'Drafts',
+			gallery: 'Gallery',
 			profile: 'Profile',
 			about: 'About',
 			logout: 'Logout'
@@ -49,6 +50,12 @@ const translations = {
 			},
 			deleteDialog: 'Confirm to delete post'
 		},
+		gallery: {
+			button: {
+				append: 'Append',
+				delete: 'Удалить'
+			}
+		},
 		profile: {
 			title: 'Profile',
 			username: 'Username',
@@ -75,6 +82,7 @@ const translations = {
 			blog: 'Блог',
 			append: 'Добавить',
 			drafts: 'Черновики',
+			gallery: 'Галерея',
 			profile: 'Профиль',
 			about: 'Об авторе',
 			logout: 'Выйти'
@@ -132,6 +140,12 @@ const translations = {
 			changeButton: 'Изменить',
 			differentPasswords: `Пароли не совпадают`,
 			passwordUpdated: 'Пароль изменён'
+		},
+		gallery: {
+			button: {
+				append: 'Добавить',
+				delete: 'Удалить'
+			}
 		},
 		about: {
 			title: 'Об авторе',

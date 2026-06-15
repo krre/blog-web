@@ -20,6 +20,7 @@
 		{ href: '/', label: i18n.t('nav.blog'), visible: true },
 		{ href: '/post/append', label: i18n.t('nav.append'), visible: isAdmin },
 		{ href: '/drafts', label: i18n.t('nav.drafts'), visible: isAdmin },
+		{ href: '/gallery', label: i18n.t('nav.gallery'), visible: isAdmin },
 		{ href: '/profile', label: i18n.t('nav.profile'), visible: isAdmin },
 		{ href: '/about', label: i18n.t('nav.about'), visible: true },
 		{ href: '/logout', label: i18n.t('nav.logout'), visible: isAdmin }
