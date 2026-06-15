@@ -2,6 +2,8 @@ import { error, json } from '@sveltejs/kit';
 import type { RequestHandler } from './$types';
 import { writeFile, mkdir } from 'node:fs/promises';
 import { join } from 'node:path';
+import { randomUUID } from 'node:crypto';
+import sharp from 'sharp';
 
 export const POST: RequestHandler = async ({ request }) => {
 	const uploadDir = join('static', 'uploads');
@@ -20,10 +22,19 @@ export const POST: RequestHandler = async ({ request }) => {
 			throw error(400, 'Invalid file type');
 		}
 
-		console.log({ file });
-
 		const buffer = Buffer.from(await file.arrayBuffer());
-		await writeFile(join(uploadDir, file.name), buffer);
+
+		const webpBuffer = await sharp(buffer)
+			.resize({
+				width: 1600,
+				withoutEnlargement: true
+			})
+			.webp({
+				quality: 80
+			})
+			.toBuffer();
+
+		await writeFile(join(uploadDir, `${randomUUID()}.webp`), webpBuffer);
 	}
 
 	return json({ success: true });
