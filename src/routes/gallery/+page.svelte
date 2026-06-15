@@ -21,10 +21,10 @@
 			formData.append('images', file);
 		}
 
-		// await fetch('/api/upload', {
-		// 	method: 'POST',
-		// 	body: formData
-		// });
+		await fetch('/api/upload', {
+			method: 'POST',
+			body: formData
+		});
 	}
 </script>
 
@@ -42,7 +42,7 @@
 		/>
 	</div>
 
-	{#each data.pictures as picture}{/each}
+	{#each data.images as image}{/each}
 </Page>
 
 <style>

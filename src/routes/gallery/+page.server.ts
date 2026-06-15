@@ -1,11 +1,11 @@
 import { error } from '@sveltejs/kit';
 import type { PageServerLoad } from './$types';
 
-interface Picture {}
+interface Image {}
 
-export const load: PageServerLoad = async ({ locals, url }) => {
+export const load: PageServerLoad = async ({ locals }) => {
 	if (!locals.user) return error(401);
 
-	const pictures: Picture[] = [];
-	return { pictures };
+	const images: Image[] = [];
+	return { images };
 };

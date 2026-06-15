@@ -3,4 +3,5 @@
 /.zed
 /node_modules/
 /build
+/static/uploads
 .env
