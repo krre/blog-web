@@ -14,6 +14,6 @@
 	});
 </script>
 
-<Page title={i18n.t('append.title')}>
+<Page title={i18n.t('nav.append')}>
 	<PostEditor action="?/append" title="" post="" />
 </Page>

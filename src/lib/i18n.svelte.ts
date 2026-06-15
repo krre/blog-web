@@ -25,9 +25,6 @@ const translations = {
 			loginButton: 'Log in',
 			wrongLoginOrPassword: 'Wrong login or password'
 		},
-		append: {
-			title: 'Append'
-		},
 		edit: {
 			title: 'Edit'
 		},
@@ -57,7 +54,6 @@ const translations = {
 			}
 		},
 		profile: {
-			title: 'Profile',
 			username: 'Username',
 			firstName: 'First name',
 			lastName: 'Last name',
@@ -72,7 +68,6 @@ const translations = {
 			passwordUpdated: 'Password changed'
 		},
 		about: {
-			title: 'About',
 			name: 'Name'
 		},
 		error: (status: number) => `${status}. Internal server error`
@@ -101,9 +96,6 @@ const translations = {
 			loginButton: 'Войти',
 			wrongLoginOrPassword: 'Логин или пароль неверны'
 		},
-		append: {
-			title: 'Добавить'
-		},
 		edit: {
 			title: 'Редактировать'
 		},
@@ -127,7 +119,6 @@ const translations = {
 			deleteDialog: 'Подтвердите удаление поста'
 		},
 		profile: {
-			title: 'Профиль',
 			username: 'Пользователь',
 			firstName: 'Имя',
 			lastName: 'Фамилия',
@@ -148,7 +139,6 @@ const translations = {
 			}
 		},
 		about: {
-			title: 'Об авторе',
 			name: 'Имя'
 		},
 		error: (status: number) => `${status}. Внутренная ошибка сервера`

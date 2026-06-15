@@ -7,7 +7,7 @@
 	let { data, form }: PageProps = $props();
 </script>
 
-<Page title={i18n.t('profile.title')}>
+<Page title={i18n.t('nav.profile')}>
 	<div>
 		<Form
 			action="?/update"

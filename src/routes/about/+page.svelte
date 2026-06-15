@@ -7,7 +7,7 @@
 	let { data }: PageProps = $props();
 </script>
 
-<Page title={i18n.t('about.title')}>
+<Page title={i18n.t('nav.about')}>
 	<div class="form-grid">
 		<div>{i18n.t('about.name')}:</div>
 		<div>{fullUserName(data.user.first_name, data.user.last_name)}</div>
