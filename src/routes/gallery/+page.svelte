@@ -17,9 +17,10 @@
 		const formData = new FormData();
 
 		for (const file of input.files) {
-			console.log(file.name, file.size);
 			formData.append('images', file);
 		}
+
+		input.value = '';
 
 		await fetch('/api/upload', {
 			method: 'POST',
