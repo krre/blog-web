@@ -31,7 +31,7 @@ export const actions = {
 		if (!locals.user) error(401);
 
 		await api.patch(`posts/${params.id}/hide`);
-		redirect(307, '/');
+		redirect(307, '/drafts');
 	},
 
 	delete: async ({ locals, params }) => {
