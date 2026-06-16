@@ -1,4 +1,4 @@
-import { uploadsDir } from '$lib/utils';
+import { uploadsDir } from '$lib/server-utils';
 import { error, json } from '@sveltejs/kit';
 import type { RequestHandler } from './$types';
 import { writeFile, mkdir } from 'node:fs/promises';

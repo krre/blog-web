@@ -1,4 +1,4 @@
-import { uploadsDir } from '$lib/utils';
+import { uploadsDir } from '$lib/server-utils';
 import * as consts from '$lib/consts';
 import { error } from '@sveltejs/kit';
 import { readdir } from 'node:fs/promises';

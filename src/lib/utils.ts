@@ -1,7 +1,5 @@
-import * as consts from '$lib/consts';
 import type { Cookies } from '@sveltejs/kit';
 import { format } from 'date-fns';
-import { join } from 'node:path';
 
 export function saveJwt(cookies: Cookies, jwt: string) {
 	cookies.set('jwt', jwt, {
@@ -19,8 +17,4 @@ export function fullUserName(firstName: string, lastName: string): string {
 
 export function formatDateTime(date: Date): string {
 	return format(date, 'dd.MM.yyyy HH:mm');
-}
-
-export function uploadsDir() {
-	return join('static', consts.Gallery.UploadsDirName);
 }
