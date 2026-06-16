@@ -1,3 +1,4 @@
+import { uploadsDir } from '$lib/utils';
 import { error, json } from '@sveltejs/kit';
 import type { RequestHandler } from './$types';
 import { writeFile, mkdir } from 'node:fs/promises';
@@ -6,9 +7,7 @@ import { randomUUID } from 'node:crypto';
 import sharp from 'sharp';
 
 export const POST: RequestHandler = async ({ request }) => {
-	const uploadDir = join('static', 'uploads');
-
-	await mkdir(uploadDir, {
+	await mkdir(uploadsDir(), {
 		recursive: true
 	});
 
