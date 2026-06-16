@@ -1,7 +1,9 @@
 <script lang="ts">
 	import Page from '$lib/components/Page.svelte';
 	import { i18n } from '$lib/i18n.svelte';
+	import * as consts from '$lib/consts';
 	import type { PageProps } from './$types';
+	import { goto } from '$app/navigation';
 
 	let { data }: PageProps = $props();
 	let fileInput: HTMLInputElement;
@@ -26,6 +28,10 @@
 			method: 'POST',
 			body: formData
 		});
+
+		await goto('/gallery', {
+			invalidateAll: true
+		});
 	}
 </script>
 
@@ -42,13 +48,30 @@
 			hidden
 		/>
 	</div>
-
-	{#each data.images as image}{/each}
+	<div class="gallery">
+		{#each data.files as file}<img
+				src="/{consts.Gallery.UploadsDirName}/{file}"
+				alt={file}
+			/>{/each}
+	</div>
 </Page>
 
 <style>
 	.toolbar {
 		display: flex;
 		gap: 0.75rem;
+		margin-bottom: 1rem;
+	}
+
+	.gallery {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+		gap: 1rem;
+	}
+
+	.gallery img {
+		width: 100%;
+		height: 200px;
+		object-fit: cover;
 	}
 </style>

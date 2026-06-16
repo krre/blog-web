@@ -1,3 +1,4 @@
+import * as consts from '$lib/consts';
 import type { Cookies } from '@sveltejs/kit';
 import { format } from 'date-fns';
 import { join } from 'node:path';
@@ -21,5 +22,5 @@ export function formatDateTime(date: Date): string {
 }
 
 export function uploadsDir() {
-	return join('static', 'uploads');
+	return join('static', consts.Gallery.UploadsDirName);
 }

@@ -33,7 +33,7 @@ export const POST: RequestHandler = async ({ request }) => {
 			})
 			.toBuffer();
 
-		await writeFile(join(uploadDir, `${randomUUID()}.webp`), webpBuffer);
+		await writeFile(join(uploadsDir(), `${randomUUID()}.webp`), webpBuffer);
 	}
 
 	return json({ success: true });
