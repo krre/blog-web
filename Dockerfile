@@ -17,8 +17,13 @@ RUN --mount=type=bind,source=package.json,target=package.json \
     --mount=type=cache,target=/root/.npm \
     npm ci
 COPY . .
+
 ARG API_SERVER_URL
+ARG PUBLIC_GA_ID
+
 ENV API_SERVER_URL=$API_SERVER_URL
+ENV PUBLIC_GA_ID=$PUBLIC_GA_ID
+
 RUN npm run build
 
 FROM base AS final

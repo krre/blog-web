@@ -42,6 +42,7 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
           build-args: |
             API_SERVER_URL=${{ vars.API_SERVER_URL }}
+            PUBLIC_GA_ID=${{ vars.PUBLIC_GA_ID }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
 

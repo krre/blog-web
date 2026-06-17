@@ -4,4 +4,5 @@ services:
       context: .
       args:
         - API_SERVER_URL=${API_SERVER_URL}
+        - PUBLIC_GA_ID=${PUBLIC_GA_ID}
     image: krre/blog-web:latest
