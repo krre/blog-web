@@ -35,7 +35,7 @@
 	}
 
 	function copyLink(filename: string) {
-		console.log({ filename });
+		navigator.clipboard.writeText(`/${consts.Gallery.UploadsDirName}/${filename}`);
 	}
 
 	function deleteImage(filename: string) {
