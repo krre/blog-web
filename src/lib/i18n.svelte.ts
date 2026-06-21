@@ -50,7 +50,8 @@ const translations = {
 		gallery: {
 			button: {
 				append: 'Append',
-				delete: 'Удалить'
+				link: 'Link',
+				delete: 'Delete'
 			}
 		},
 		profile: {
@@ -135,6 +136,7 @@ const translations = {
 		gallery: {
 			button: {
 				append: 'Добавить',
+				link: 'Ссылка',
 				delete: 'Удалить'
 			}
 		},

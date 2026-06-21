@@ -33,12 +33,19 @@
 			invalidateAll: true
 		});
 	}
+
+	function copyLink(filename: string) {
+		console.log({ filename });
+	}
+
+	function deleteImage(filename: string) {
+		console.log({ filename });
+	}
 </script>
 
 <Page title={i18n.t('nav.gallery')}>
 	<div class="toolbar">
 		<button onclick={openFileDialog}>{i18n.t('gallery.button.append')}</button>
-		<button>{i18n.t('gallery.button.delete')}</button>
 		<input
 			bind:this={fileInput}
 			type="file"
@@ -49,10 +56,15 @@
 		/>
 	</div>
 	<div class="gallery">
-		{#each data.files as file}<img
-				src="/{consts.Gallery.UploadsDirName}/{file}"
-				alt={file}
-			/>{/each}
+		{#each data.files as file}
+			<div>
+				<img src="/{consts.Gallery.UploadsDirName}/{file}" alt={file} />
+				<div>
+					<button onclick={() => copyLink(file)}>{i18n.t('gallery.button.link')}</button>
+					<button onclick={() => deleteImage(file)}>{i18n.t('gallery.button.delete')}</button>
+				</div>
+			</div>
+		{/each}
 	</div>
 </Page>
 
