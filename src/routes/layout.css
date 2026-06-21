@@ -91,6 +91,13 @@ a:hover {
 	color: var(--accent-color-300);
 }
 
+img {
+	display: block;
+	max-width: min(100%, 1200px);
+	max-height: min(100vh, 700px);
+	margin: 0 auto;
+}
+
 .form-grid {
 	display: grid;
 	gap: 0.5em;
