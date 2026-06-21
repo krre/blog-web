@@ -31,7 +31,7 @@ export const load: PageServerLoad = async ({ locals, url }) => {
 	const sortedFiles = filesWithStats.sort((a, b) => b.mtime - a.mtime).map((file) => file.name);
 
 	const page = Number(url.searchParams.get('page')) || 1;
-	const limit = consts.Post.PageLimit;
+	const limit = consts.Gallery.PageLimit;
 	const offset = (page - 1) * limit;
 
 	const images: Images = {

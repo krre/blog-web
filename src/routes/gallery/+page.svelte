@@ -4,9 +4,15 @@
 	import * as consts from '$lib/consts';
 	import type { PageProps } from './$types';
 	import { goto, invalidateAll } from '$app/navigation';
+	import Pagination from '$lib/components/Pagination.svelte';
 
 	let { data }: PageProps = $props();
+	let current: number = $state(1);
 	let fileInput: HTMLInputElement;
+
+	$effect(() => {
+		goto(current > 1 ? `/gallery/?page=${current}` : '/gallery');
+	});
 
 	function openFileDialog() {
 		fileInput.click();
@@ -55,35 +61,43 @@
 </script>
 
 <Page title={i18n.t('nav.gallery')}>
-	<div class="toolbar">
-		<button onclick={openFileDialog}>{i18n.t('gallery.button.append')}</button>
-		<input
-			bind:this={fileInput}
-			type="file"
-			accept="image/*"
-			multiple
-			onchange={handleFiles}
-			hidden
-		/>
-	</div>
-	<div class="gallery">
-		{#each data.files as file}
-			<div>
-				<img src="/{consts.Gallery.UploadsDirName}/{file}" alt={file} />
+	<div class="container">
+		<div class="toolbar">
+			<button onclick={openFileDialog}>{i18n.t('gallery.button.append')}</button>
+			<input
+				bind:this={fileInput}
+				type="file"
+				accept="image/*"
+				multiple
+				onchange={handleFiles}
+				hidden
+			/>
+		</div>
+		<div class="gallery">
+			{#each data.files as file}
 				<div>
-					<button onclick={() => copyLink(file)}>{i18n.t('gallery.button.link')}</button>
-					<button onclick={() => deleteImage(file)}>{i18n.t('gallery.button.delete')}</button>
+					<img src="/{consts.Gallery.UploadsDirName}/{file}" alt={file} />
+					<div>
+						<button onclick={() => copyLink(file)}>{i18n.t('gallery.button.link')}</button>
+						<button onclick={() => deleteImage(file)}>{i18n.t('gallery.button.delete')}</button>
+					</div>
 				</div>
-			</div>
-		{/each}
+			{/each}
+		</div>
+		<Pagination count={data.total} limit={consts.Gallery.PageLimit} bind:current />
 	</div>
 </Page>
 
 <style>
+	.container {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+	}
+
 	.toolbar {
 		display: flex;
 		gap: 0.75rem;
-		margin-bottom: 1rem;
 	}
 
 	.gallery {
