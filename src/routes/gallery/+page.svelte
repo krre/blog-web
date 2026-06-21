@@ -77,7 +77,7 @@
 		</div>
 		<div class="gallery">
 			{#each data.files as file}
-				<div>
+				<div class="image-container">
 					<img src="/{consts.Gallery.UploadsDirName}/{file}" alt={file} />
 					<div>
 						<button onclick={() => copyLink(file)}>{i18n.t('gallery.button.link')}</button>
@@ -95,6 +95,12 @@
 		display: flex;
 		flex-direction: column;
 		gap: 1rem;
+	}
+
+	.image-container {
+		display: flex;
+		flex-direction: column;
+		gap: 0.75rem;
 	}
 
 	.toolbar {
