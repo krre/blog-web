@@ -1,7 +1,7 @@
-import { uploadsDir } from '$lib/server-utils';
 import * as consts from '$lib/consts';
 import { error } from '@sveltejs/kit';
-import { readdir, stat } from 'node:fs/promises';
+import { UPLOAD_DIR } from '$app/env/private';
+import { readdir, stat, mkdir } from 'node:fs/promises';
 import type { PageServerLoad } from './$types';
 import { join } from 'node:path';
 
@@ -13,12 +13,17 @@ interface Images {
 export const load: PageServerLoad = async ({ locals, url }) => {
 	if (!locals.user) return error(401);
 
-	const dirPath = uploadsDir();
-	const files = await readdir(dirPath);
+	const uploadDir = UPLOAD_DIR;
+
+	await mkdir(uploadDir, {
+		recursive: true
+	});
+
+	const files = await readdir(uploadDir);
 
 	const filesWithStats = await Promise.all(
 		files.map(async (file) => {
-			const filePath = join(dirPath, file);
+			const filePath = join(uploadDir, file);
 			const fileStat = await stat(filePath);
 
 			return {

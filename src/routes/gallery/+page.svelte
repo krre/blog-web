@@ -41,7 +41,7 @@
 	}
 
 	function copyLink(filename: string) {
-		const url = `/${consts.Gallery.UploadsDirName}/${filename}`;
+		const url = `/upload/${filename}`;
 		const link = `<a href="${url}"><img src="${url}"></a>`;
 		navigator.clipboard.writeText(link);
 	}
@@ -78,7 +78,7 @@
 		<div class="gallery">
 			{#each data.files as file}
 				<div class="image-container">
-					<img src="/{consts.Gallery.UploadsDirName}/{file}" alt={file} />
+					<img src="/upload/{file}" alt={file} />
 					<div>
 						<button onclick={() => copyLink(file)}>{i18n.t('gallery.button.link')}</button>
 						<button onclick={() => deleteImage(file)}>{i18n.t('gallery.button.delete')}</button>

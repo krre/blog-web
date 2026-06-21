@@ -1,5 +1,5 @@
-import { uploadsDir } from '$lib/server-utils';
 import { error, json } from '@sveltejs/kit';
+import { UPLOAD_DIR } from '$app/env/private';
 import type { RequestHandler } from './$types';
 import { writeFile, rm, mkdir } from 'node:fs/promises';
 import { join } from 'node:path';
@@ -7,7 +7,13 @@ import { randomUUID } from 'node:crypto';
 import sharp from 'sharp';
 
 export const POST: RequestHandler = async ({ request }) => {
-	await mkdir(uploadsDir(), {
+	const uploadDir = UPLOAD_DIR;
+
+	if (!uploadDir) {
+		return json({ success: true });
+	}
+
+	await mkdir(uploadDir, {
 		recursive: true
 	});
 
@@ -33,7 +39,7 @@ export const POST: RequestHandler = async ({ request }) => {
 			})
 			.toBuffer();
 
-		await writeFile(join(uploadsDir(), `${randomUUID()}.webp`), webpBuffer);
+		await writeFile(join(uploadDir, `${randomUUID()}.webp`), webpBuffer);
 	}
 
 	return json({ success: true });
@@ -41,7 +47,12 @@ export const POST: RequestHandler = async ({ request }) => {
 
 export const DELETE: RequestHandler = async ({ request }) => {
 	const formData = await request.formData();
-	const filename = `${uploadsDir()}/${formData.get('filename')}`;
+	const filename = formData.get('filename')?.toString() ?? '';
+
+	if (!filename) {
+		return json({ success: false });
+	}
+
 	await rm(filename);
 	return json({ success: true });
 };
