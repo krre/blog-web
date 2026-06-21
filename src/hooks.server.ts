@@ -1,7 +1,6 @@
 import type { User } from '$lib/types';
 import type { Handle } from '@sveltejs/kit';
 import { jwtDecode } from 'jwt-decode';
-import { GOOGLE_ANALYTICS_ID } from '$app/env/public';
 
 interface JwtUser {
 	id: number;
@@ -28,22 +27,5 @@ export const handle: Handle = async ({ event, resolve }) => {
 		event.locals.user = user;
 	}
 
-	return resolve(event, {
-		transformPageChunk: ({ html }) => {
-			if (!GOOGLE_ANALYTICS_ID) {
-				return html.replace('%sveltekit.analytics%', '');
-			}
-
-			const analyticsScript = `
-					<script async src="https://www.googletagmanager.com/gtag/js?id=${GOOGLE_ANALYTICS_ID}"></script>
-					<script>
-						window.dataLayer = window.dataLayer || [];
-						function gtag(){dataLayer.push(arguments);}
-						gtag('js', new Date());
-						gtag('config', '${GOOGLE_ANALYTICS_ID}');
-					</script>`;
-
-			return html.replace('%sveltekit.analytics%', analyticsScript);
-		}
-	});
+	return resolve(event);
 };
