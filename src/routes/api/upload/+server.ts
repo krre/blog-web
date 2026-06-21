@@ -1,7 +1,7 @@
 import { uploadsDir } from '$lib/server-utils';
 import { error, json } from '@sveltejs/kit';
 import type { RequestHandler } from './$types';
-import { writeFile, mkdir } from 'node:fs/promises';
+import { writeFile, rm, mkdir } from 'node:fs/promises';
 import { join } from 'node:path';
 import { randomUUID } from 'node:crypto';
 import sharp from 'sharp';
@@ -36,5 +36,12 @@ export const POST: RequestHandler = async ({ request }) => {
 		await writeFile(join(uploadsDir(), `${randomUUID()}.webp`), webpBuffer);
 	}
 
+	return json({ success: true });
+};
+
+export const DELETE: RequestHandler = async ({ request }) => {
+	const formData = await request.formData();
+	const filename = `${uploadsDir()}/${formData.get('filename')}`;
+	await rm(filename);
 	return json({ success: true });
 };

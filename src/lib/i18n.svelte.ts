@@ -52,7 +52,8 @@ const translations = {
 				append: 'Append',
 				link: 'Link',
 				delete: 'Delete'
-			}
+			},
+			deleteDialog: 'Confirm to delete image'
 		},
 		profile: {
 			username: 'Username',
@@ -138,7 +139,8 @@ const translations = {
 				append: 'Добавить',
 				link: 'Ссылка',
 				delete: 'Удалить'
-			}
+			},
+			deleteDialog: 'Подтвердите удаление изображения'
 		},
 		about: {
 			name: 'Имя'

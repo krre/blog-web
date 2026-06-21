@@ -3,7 +3,7 @@
 	import { i18n } from '$lib/i18n.svelte';
 	import * as consts from '$lib/consts';
 	import type { PageProps } from './$types';
-	import { goto } from '$app/navigation';
+	import { goto, invalidateAll } from '$app/navigation';
 
 	let { data }: PageProps = $props();
 	let fileInput: HTMLInputElement;
@@ -38,8 +38,19 @@
 		navigator.clipboard.writeText(`/${consts.Gallery.UploadsDirName}/${filename}`);
 	}
 
-	function deleteImage(filename: string) {
-		console.log({ filename });
+	async function deleteImage(filename: string) {
+		const confirmed = confirm(i18n.t('post.deleteDialog'));
+		if (!confirmed) return;
+
+		const formData = new FormData();
+		formData.append('filename', filename);
+
+		await fetch('/api/upload', {
+			method: 'DELETE',
+			body: formData
+		});
+
+		invalidateAll();
 	}
 </script>
 
