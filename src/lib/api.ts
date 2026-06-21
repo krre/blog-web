@@ -1,4 +1,4 @@
-import { API_SERVER_URL } from '$env/static/private';
+import { API_SERVER_URL } from '$app/env/private';
 import { getRequestEvent } from '$app/server';
 import { error } from '@sveltejs/kit';
 
