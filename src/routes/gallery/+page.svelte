@@ -41,7 +41,9 @@
 	}
 
 	function copyLink(filename: string) {
-		navigator.clipboard.writeText(`/${consts.Gallery.UploadsDirName}/${filename}`);
+		const url = `/${consts.Gallery.UploadsDirName}/${filename}`;
+		const link = `<a href="${url}"><img src="${url}"></a>`;
+		navigator.clipboard.writeText(link);
 	}
 
 	async function deleteImage(filename: string) {
