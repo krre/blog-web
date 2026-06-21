@@ -16,22 +16,30 @@
 </script>
 
 <Page {title}>
-	<div class="rows">
-		{#each posts.posts as post}
-			<div>
-				<div class="date">
-					{formatDateTime(post.posted_at)}
+	<div class="container">
+		<div class="rows">
+			{#each posts.posts as post}
+				<div>
+					<div class="date">
+						{formatDateTime(post.posted_at)}
+					</div>
+					<h2>
+						<a href="/post/{post.id}{isPublished ? '' : '?draft=1'}">{post.title}</a>
+					</h2>
 				</div>
-				<h2>
-					<a href="/post/{post.id}{isPublished ? '' : '?draft=1'}">{post.title}</a>
-				</h2>
-			</div>
-		{/each}
+			{/each}
+		</div>
+		<Pagination count={posts.count} limit={consts.Post.PageLimit} bind:current />
 	</div>
-	<Pagination count={posts.count} limit={consts.Post.PageLimit} bind:current />
 </Page>
 
 <style>
+	.container {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+	}
+
 	.rows {
 		display: grid;
 		gap: 0.875rem;
