@@ -19,23 +19,21 @@ RUN --mount=type=bind,source=package.json,target=package.json \
 COPY . .
 
 ARG API_SERVER_URL
+ARG UPLOAD_DIR
 ARG GOOGLE_ANALYTICS_ID
 
 ENV API_SERVER_URL=$API_SERVER_URL
+ENV UPLOAD_DIR=$UPLOAD_DIR
 ENV GOOGLE_ANALYTICS_ID=$GOOGLE_ANALYTICS_ID
 
 RUN npm run build
 
 FROM base AS final
+ENV NODE_ENV=production
 USER node
 COPY package.json .
 COPY --from=deps /usr/src/app/node_modules ./node_modules
 COPY --from=build /usr/src/app/build ./build
-
-RUN mkdir -p ./upload
-
-ENV UPLOAD_DIR=./upload
-ENV NODE_ENV=production
 
 EXPOSE 3000
 CMD ["node", "build"]
