@@ -4,6 +4,5 @@ services:
       context: .
       args:
         - API_SERVER_URL=${API_SERVER_URL}
-        - UPLOAD_DIR=${UPLOAD_DIR}
         - GOOGLE_ANALYTICS_ID=${GOOGLE_ANALYTICS_ID}
     image: krre/blog-web:latest
