@@ -47,7 +47,7 @@ export const POST: RequestHandler = async ({ request }) => {
 
 export const DELETE: RequestHandler = async ({ request }) => {
 	const formData = await request.formData();
-	const filename = formData.get('filename')?.toString() ?? '';
+	const filename = join(UPLOAD_DIR, formData.get('filename')?.toString() ?? '');
 
 	if (!filename) {
 		return json({ success: false });
