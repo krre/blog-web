@@ -23,13 +23,14 @@ ARG UPLOAD_DIR
 ARG GOOGLE_ANALYTICS_ID
 
 ENV API_SERVER_URL=$API_SERVER_URL
-ENV UPLOAD_DIR=$UPLOAD_DIR
+ENV UPLOAD_DIR=./upload
 ENV GOOGLE_ANALYTICS_ID=$GOOGLE_ANALYTICS_ID
+ENV NODE_ENV=production
 
 RUN npm run build
 
 FROM base AS final
-ENV NODE_ENV=production
+RUN mkdir -p ./upload && chown -R node:node /usr/src/app
 USER node
 COPY package.json .
 COPY --from=deps /usr/src/app/node_modules ./node_modules
