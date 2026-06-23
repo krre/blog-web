@@ -78,7 +78,7 @@
 		<div class="gallery">
 			{#each data.files as file}
 				<div class="image-container">
-					<img src="/upload/{file}" alt={file} />
+					<a href="/upload/{file}"><img src="/upload/{file}" alt={file} /></a>
 					<div>
 						<button onclick={() => copyLink(file)}>{i18n.t('gallery.button.link')}</button>
 						<button onclick={() => deleteImage(file)}>{i18n.t('gallery.button.delete')}</button>
